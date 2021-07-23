@@ -1,0 +1,10 @@
+__pycache__
+*.pyc 
+
+media\*
+staticfiles
+
+.vscode
+
+.env
+.localenv
