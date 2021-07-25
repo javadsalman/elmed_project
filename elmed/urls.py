@@ -15,7 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.i18n import i18n_patterns
+from django.conf import settings
+from django.conf.urls.static import static
+from elmed.views import AboutView, ContactView, HomeView
+from os import getenv
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+    path('%s/' % getenv('ADMIN_URL'), admin.site.urls),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += i18n_patterns(
+    path('', HomeView.as_view(), name='home'),
+    path('haqqinda/', AboutView.as_view(), name='about'),
+    path('elaqe/', ContactView.as_view(), name='contact')
+)

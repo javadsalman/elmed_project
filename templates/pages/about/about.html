@@ -1,0 +1,17 @@
+{% extends 'layouts/main_layout/main_layout.html' %}
+{% load static %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'pages/about/css/custom_about.css' %}">
+{% endblock links %}
+
+{% block body %}
+    {% include 'general_includes/banner/banner.html' %}
+    {% include 'pages/about/includes/info_area.html' %}
+    {% include 'pages/about/includes/qa_area.html' %}
+{% endblock body %}
+
+{% block scripts %}
+<!-- Imagesloaded Js -->
+    <script src="{% static 'general/base/js/imagesloaded.pkgd.min.js' %}"></script>
+{% endblock scripts %}

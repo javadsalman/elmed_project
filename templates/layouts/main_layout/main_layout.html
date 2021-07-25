@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block meta %}
+    {% endblock meta %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    {% endblock title %}
+
+    {% include 'layouts/main_layout/includes/links.html' %}
+
+    {% block links %}
+    {% endblock links %}
+</head>
+<body>
+    {% include 'layouts/main_layout/includes/header.html' %}
+
+    {% block body %}
+    {% endblock body %}
+    
+    {% include 'layouts/main_layout/includes/footer.html' %}
+
+    {% block pre_scripts %}
+    {% endblock pre_scripts %}
+    {% include 'layouts/main_layout/includes/scripts.html' %}
+    {% block scripts %}
+    {% endblock scripts %}
+    
+</body>
+</html>

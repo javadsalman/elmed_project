@@ -1,5 +1,5 @@
 __pycache__
-*.pyc 
+*.pyc
 
 media\*
 staticfiles
@@ -8,3 +8,5 @@ staticfiles
 
 .env
 .localenv
+
+activate.bat
