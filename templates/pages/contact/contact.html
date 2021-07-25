@@ -2,6 +2,9 @@
 
 {% load static %}
 
+{% block links %}
+    {% include 'pages/contact/includes/links.html' %}
+{% endblock links %}
 
 {% block body %}
 {% include 'general_includes/banner/banner.html' %}
@@ -32,11 +35,6 @@
 <!-- Contact Us Area End Here -->
 {% endblock body %}
 
-{% block pre_scripts %}
-    <!-- Google Map js -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtmXSwv4YmAKtcZyyad9W7D4AC08z0Rb4"></script>
-    <!-- Validator js -->
-    <script src="{% static 'general/base/js/validator.min.js' %}"></script>
-    <!-- Select Js -->
-    <script src="{% static 'general/base/js/select2.min.js' %}"></script>
-{% endblock pre_scripts %}
+{% block scripts %}
+    {% include 'pages/contact/includes/scripts.html' %}
+{% endblock scripts %}

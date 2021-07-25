@@ -1,0 +1,26 @@
+{% extends 'layouts/main_layout/main_layout.html' %}
+
+{% load static %}
+
+
+{% block links %}
+    {% include 'doctor/doctor_list/includes/links.html' %}
+{% endblock links %}
+
+{% block body %}
+    {% include 'general_includes/banner/banner.html' %}
+
+     <!-- All Doctors Start Here -->
+        <section class="team-wrap-layout3 bg-light-accent100">
+            <div class="container">
+                {% include 'doctor/doctor_list/includes/search_area.html' %}
+                {% include 'doctor/doctor_list/includes/doctors_area.html' %}
+                {% include 'general_includes/pagination/pagination.html' %}
+            </div>
+        </section>
+        <!-- All Doctors End Here -->
+{% endblock body %}
+
+{% block scripts %}
+    {% include 'doctor/doctor_list/includes/scripts.html' %}
+{% endblock scripts %}

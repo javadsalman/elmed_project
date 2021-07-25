@@ -1,0 +1,29 @@
+{% extends 'layouts/main_layout/main_layout.html' %}
+
+
+{% block links %}
+    {% include 'blog/blog/includes/links.html' %}
+{% endblock links %}
+
+
+{% block body %}
+    {% include 'general_includes/banner/banner.html' %}
+    <!-- Blog Grid Area Start Here -->
+    <section class="blog-wrap-layout2 bg-light-primary100">
+        <div class="container">
+            <div class="row">
+                {% include 'blog/blog/includes/articles_area.html' %}
+                <div class="sidebar-widget-area sidebar-break-md col-xl-3 col-lg-4 col-12">
+                    {% include 'blog/blog/includes/search_area.html' %}
+                    {% include 'blog/blog/includes/categories_area.html' %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Grid Area End Here -->
+{% endblock body %}
+
+
+{% block scripts %}
+    {% include 'blog/blog/includes/scripts.html' %}
+{% endblock scripts %}

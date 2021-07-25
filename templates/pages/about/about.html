@@ -2,8 +2,10 @@
 {% load static %}
 
 {% block links %}
-<link rel="stylesheet" href="{% static 'pages/about/css/custom_about.css' %}">
+    {% include 'pages/about/includes/links.html' %}
+    <link rel="stylesheet" href="{% static 'pages/about/css/custom_about.css' %}">
 {% endblock links %}
+
 
 {% block body %}
     {% include 'general_includes/banner/banner.html' %}
@@ -12,6 +14,5 @@
 {% endblock body %}
 
 {% block scripts %}
-<!-- Imagesloaded Js -->
-    <script src="{% static 'general/base/js/imagesloaded.pkgd.min.js' %}"></script>
+    {% include 'pages/about/includes/scripts.html' %}
 {% endblock scripts %}

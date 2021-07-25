@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +11,13 @@
     {% endblock title %}
 
     {% include 'layouts/main_layout/includes/links.html' %}
-
     {% block links %}
     {% endblock links %}
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="{% static 'layouts/main_layout/css/custom_main_layout.css' %}">
+    <!-- Modernizr Js -->
+    <script src="{% static 'general/base/js/main.js' %}"></script>
+
 </head>
 <body>
     {% include 'layouts/main_layout/includes/header.html' %}
@@ -22,11 +27,11 @@
     
     {% include 'layouts/main_layout/includes/footer.html' %}
 
-    {% block pre_scripts %}
-    {% endblock pre_scripts %}
     {% include 'layouts/main_layout/includes/scripts.html' %}
+
     {% block scripts %}
     {% endblock scripts %}
+
     
 </body>
 </html>

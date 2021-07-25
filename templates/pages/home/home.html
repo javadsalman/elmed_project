@@ -1,4 +1,9 @@
 {% extends 'layouts/main_layout/main_layout.html' %}
+
+{% block links %}
+    {% include 'pages/home/includes/links.html' %}
+{% endblock links %}
+
 {% block body %}
     {% include 'pages/home/includes/slider_area.html' %}
     {% include 'pages/home/includes/action_area.html' %}
@@ -8,3 +13,7 @@
     {% include 'pages/home/includes/blog_area.html' %}
     {% include 'pages/home/includes/featured_area.html' %}
 {% endblock body %}
+
+{% block scripts %}
+    {% include 'pages/home/includes/scripts.html' %}
+{% endblock scripts %}
