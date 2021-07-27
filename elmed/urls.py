@@ -28,9 +28,10 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('', HomeView.as_view(), name='home'),
-    path('haqqinda/', AboutView.as_view(), name='about'),
+    path('haqqimizda/', AboutView.as_view(), name='about'),
     path('elaqe/', ContactView.as_view(), name='contact'),
     path('sobeler/', include('departament.urls')),
     path('hekimler/', include('doctor.urls')),
-    path('bloq', include('blog.urls')),
+    path('bloq/', include('blog.urls')),
+    path('qeydiyyat/', include('appointment.urls')),
 )

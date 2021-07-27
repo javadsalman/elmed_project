@@ -1,0 +1,46 @@
+{% extends 'layouts/main_layout/main_layout.html' %}
+
+{% load static %}
+
+{% block links %}
+    {% include 'departament/departament_detail/includes/links.html' %}
+{% endblock links %}
+
+{% block body %}
+{% include 'general_includes/banner/banner.html' %}
+<!-- Single Department Start Here -->
+<section class="single-department-wrap-layout1 bg-light-primary100">
+    <div class="container">
+        <div class="row" id="no-equal-gallery">
+            <div class="sidebar-widget-area sidebar-break-md col-xl-3 col-lg-4 col-12 no-equal-item">
+                {% comment %} <div class="widget widget-department-info">
+                    <h3 class="section-title title-bar-primary">All Departments</h3>
+                </div> {% endcomment %}
+                {% include 'general_includes/side_categories/side_categories.html' with name="Bütün Şöbələr"%}
+            </div>
+            <div class="col-xl-9 col-lg-8 col-12 no-equal-item">
+                {% include 'departament/departament_detail/includes/info_area.html' %}
+            </div>
+            <div class="sidebar-widget-area sidebar-break-md col-xl-3 col-lg-4 col-12 no-equal-item">
+                <div class="widget widget-call-to-action-light">
+                    <div class="media">
+                        <img src="{% static 'general/base/img/figure/figure6.png' %}" alt="figure">
+                        <div class="media-body space-sm">
+                            <h4>Emergency Cases</h4>
+                            <span>2-800-700-6200</span>
+                        </div>
+                    </div>
+                </div>
+                {% include 'departament/departament_detail/includes/schedule_area.html' %}
+                {% include 'general_includes/side_appointment/side_appointment.html' %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Single Department End Here -->
+{% endblock body %}
+
+
+{% block scripts %}
+    {% include 'departament/departament_detail/includes/scripts.html' %}
+{% endblock scripts %}

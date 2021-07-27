@@ -33,13 +33,10 @@
                                     <a href="{% url 'doctor-list' %}">Həkimlər</a>
                                 </li>                           
                                 <li>
-                                    <a href="{% url 'blog' %}">Xəbərlər</a>
-                                </li>                           
-                                <li>
                                     <a href="{% url 'blog' %}">Bloq</a>
                                 </li>                           
                                 <li>
-                                    <li><a href="{% url 'about' %}">Haqqında</a></li>
+                                    <li><a href="{% url 'about' %}">Haqqımızda</a></li>
                                 </li>
                                 <li>
                                     <a href="{% url 'contact' %}">Əlaqə</a>
@@ -52,7 +49,7 @@
                     <div class="header-action-items-layout1">
                         <ul>
                             <li>
-                                <a href="#" class="action-items-light-btn ml-3">Appointment</a>
+                                <a href="{% url 'appointment' %}" class="action-items-light-btn ml-3">Appointment</a>
                             </li>
                         </ul>
                     </div>
