@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'doctor',
     'blog',
     'appointment',
+    # EXTERNAL APPS
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -124,7 +126,7 @@ LANGUAGES = [
     ('ru', 'RUS'),
 ]
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Baku'
 
 USE_I18N = True
 
@@ -152,3 +154,35 @@ MEDIA_ROOT = 'media'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# CKeditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'CMS',
+        'toolbar_CMS': [
+            ['Format', 'Styles', 'FontSize'],
+            [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript'],
+            ['TextColor', 'BGColor'],
+            ['Link', 'Unlink'],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Undo', 'Redo'],
+            ['Copy', 'Paste', 'PasteText', 'PasteFromWord'],
+            ['SelectAll', 'Find', 'Replace'],
+            ['NumberedList', 'BulletedList'],
+            ['Outdent', 'Indent'],
+            ['Smiley', 'SpecialChar', 'Blockquote', 'HorizontalRule'],
+            ['Table', 'Image', 'Youtube'],
+            ['ShowBlocks', 'Source', 'About']
+            
+        ],
+        'contentsCss': (
+            '/staticfiles/ckeditor/customization-files/nunito_font.css',
+            '/staticfiles/ckeditor/customization-files/bootstrap.css',
+            '/staticfiles/blog/css/style.css',
+        ),
+        'contentJs': (
+            'staticfiles/blog/js/article.js'
+        )
+    },
+}
