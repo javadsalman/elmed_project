@@ -122,8 +122,6 @@ LANGUAGE_CODE = 'az'
 
 LANGUAGES = [
     ('az', 'AZE'),
-    ('en', 'ENG'),
-    ('ru', 'RUS'),
 ]
 
 TIME_ZONE = 'Asia/Baku'

@@ -22,6 +22,8 @@ from django.urls.conf import include
 from elmed.views import AboutView, ContactView, HomeView
 from os import getenv
 
+admin.site.site_header = 'ELMED.AZ ADMIN PANELI'
+
 urlpatterns = [
     path('%s/' % getenv('ADMIN_URL'), admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
