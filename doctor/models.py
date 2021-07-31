@@ -22,12 +22,12 @@ class Doctor(models.Model):
     departament = models.ForeignKey(Departament, on_delete=models.SET_NULL, null=True, verbose_name='Şöbə')
     about = RichTextField(null=False, blank=True, verbose_name='Haqqında Məlumat')
     profession = models.CharField(max_length=100, verbose_name='Vəzifəsi')
-    degree = models.CharField(max_length=150, verbose_name='Dərəcəsi')
-    facebook = models.URLField(max_length=300, verbose_name='Facebook Linki')
-    instagram = models.URLField(max_length=300, verbose_name='Instagram Linki')
-    whatsapp = models.URLField(max_length=300, verbose_name='Whatsapp Linki')
-    youtube = models.URLField(max_length=300, verbose_name='YouTube Linki')
-    phone = models.CharField(max_length=50, verbose_name='Telefon Nömrəsi')
+    degree = models.CharField(max_length=150, verbose_name='Dərəcəsi', null=True, blank=True)
+    facebook = models.URLField(max_length=300, verbose_name='Facebook Linki', null=True, blank=True)
+    instagram = models.URLField(max_length=300, verbose_name='Instagram Linki', null=True, blank=True)
+    whatsapp = models.URLField(max_length=300, verbose_name='Whatsapp Linki', null=True, blank=True)
+    youtube = models.URLField(max_length=300, verbose_name='YouTube Linki', null=True, blank=True)
+    phone = models.CharField(max_length=50, verbose_name='Telefon Nömrəsi', null=True, blank=True)
     schedule = models.ForeignKey(DoctorSchedule, on_delete=models.PROTECT, verbose_name='İş Rejmi')
     updated = models.DateTimeField(auto_now_add=True, verbose_name='Son Dəyişdirilmə Tarixi')
     created = models.DateTimeField(auto_now=True, verbose_name='Yaradılma Tarixi')
@@ -40,6 +40,10 @@ class Doctor(models.Model):
     def save(self, *args, **kwargs):
         self.slug = get_slug(self.name)
         super().save(*args, **kwargs)
+        
+    def delete(self, *args, **kwargs):
+        self.user.delete()
+        super().delete(*args, **kwargs)
         
     def __str__(self):
         return '%s - %s' % (self.name, self.profession)

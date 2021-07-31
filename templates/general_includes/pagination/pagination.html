@@ -1,17 +1,29 @@
+{% load url_handler %}
+
 <ul class="pagination-layout2 margin-t-50r">
     <li>
-        <a href="#">Previous</a>
+        {% if page_obj.has_previous %}
+            <a href="{% edit_query request page=page_obj.previous_page_number %}">Əvvələ</a>
+        {% else %}
+            <a class="btn disabled" href="#">Əvvələ</a>
+        {% endif %}
     </li>
-    <li class="active">
-        <a href="#">1</a>
-    </li>
+    {% for page in page_list %}
+        {% if page == page_obj.number %}
+            <li class="active">
+                <a href="{% edit_query request page=page %}">{{ page }}</a>
+            </li>
+        {% else %}
+            <li>
+                <a href="{% edit_query request page=page %}">{{ page }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
     <li>
-        <a href="#">2</a>
-    </li>
-    <li>
-        <a href="#">3</a>
-    </li>
-    <li>
-        <a href="#">Next</a>
+        {% if page_obj.has_next %}
+            <a href="{% edit_query request page=page_obj.next_page_number %}">Növbəti</a>
+        {% else %}
+            <a class="btn disabled" href="#">Növbəti</a>
+        {% endif %}
     </li>
 </ul>

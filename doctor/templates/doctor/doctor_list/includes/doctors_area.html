@@ -1,34 +1,35 @@
-{% load static %}
-
 <div class="row">
-    <div class="col-lg-6 col-md-6">
-        <div class="team-box-layout1">
-            <div class="media media-none-lg media-none-md media-none--xs">
-                <div class="item-img">
-                    <img src="{% static 'general/base/img/team/team21.png' %}" alt="Team1" class="img-fluid rounded-circle media-img-auto">
-                </div>
-                <div class="media-body">
-                    <div class="item-content">
-                        <h4 class="item-title">
-                            <a href="single-doctor.html">Dr.Mark Willy</a>
-                        </h4>
-                        <p class="designation">Associate Eye</p>
-                        <div class="item-degree">BDS, FCPS (Hons), PhD (Japan)</div>
-                        <ul class="item-btns">
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-ghost">View Profile</a>
-                            </li>
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-fill">Make an
-                                    Appointment</a>
-                            </li>
-                        </ul>
+    {% for doctor in doctors %}
+        <div class="col-lg-6 col-md-6">
+            <div class="team-box-layout1">
+                <div class="media media-none-lg media-none-md media-none--xs">
+                    <div class="item-img">
+                        <img src="{{ doctor.image.url }}" alt="Team1" class="img-fluid rounded-circle media-img-auto" style="width: 170px; height: 170px; object-fit: cover; object-position: top;">
+                    </div>
+                    <div class="media-body">
+                        <div class="item-content">
+                            <h4 class="item-title">
+                                <a href="single-doctor.html">{{ doctor.name }}</a>
+                            </h4>
+                            <p class="designation">{{ doctor.profession }}</p>
+                            <div class="item-degree">{{ doctor.degree }}</div>
+                            <ul class="item-btns">
+                                <li>
+                                    <a href="single-doctor.html" class="item-btn btn-ghost">View Profile</a>
+                                </li>
+                                <li>
+                                    <a href="single-doctor.html" class="item-btn btn-fill">Make an
+                                        Appointment</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-lg-6 col-md-6">
+    {% endfor %}
+
+    {% comment %} <div class="col-lg-6 col-md-6">
         <div class="team-box-layout1">
             <div class="media media-none-lg media-none-md media-none--xs">
                 <div class="item-img">
@@ -216,5 +217,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
 </div>

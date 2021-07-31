@@ -19,7 +19,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls.conf import include
-from elmed.views import AboutView, ContactView, HomeView
+from elmed.views import AboutView, ContactView, home
 from os import getenv
 
 admin.site.site_header = 'ELMED.AZ ADMIN PANELI'
@@ -29,7 +29,7 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += i18n_patterns(
-    path('', HomeView.as_view(), name='home'),
+    path('', home, name='home'),
     path('haqqimizda/', AboutView.as_view(), name='about'),
     path('elaqe/', ContactView.as_view(), name='contact'),
     path('sobeler/', include('departament.urls')),

@@ -6,7 +6,7 @@
 
 {% block body %}
     {% include 'general_includes/banner/banner.html' %}
-    {% include 'departament/departament_list/includes/departaments_area.html' %}
+    {% include 'departament/departament_list/includes/departaments_area.html' with departaments=departaments%}
 
     <!-- Call to Action Area Start Here -->
     <section class="call-to-action-wrap-layout2 bg-common parallaxie" data-bg-image="img/figure/figure4.jpg">

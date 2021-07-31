@@ -1,6 +1,6 @@
 from ckeditor.fields import RichTextField
 from doctor.models import Doctor
-from shared.model.utils import get_image_tag, get_slug, get_slug_link
+from shared.model.utils import get_image_tag, get_slug, get_slug_link, text_from_html
 from django.db import models
 from django.urls.base import reverse
 from imagekit.models import ProcessedImageField
@@ -41,6 +41,7 @@ class Article(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.SET_NULL, null=True, blank=True, default=None, verbose_name="Müəllif")
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, verbose_name="Kateqoriya")
     title = models.CharField(max_length=60, null=False, blank=False, verbose_name="Başlıq")
+    description = models.CharField(max_length=200, null=True, blank=True)
     main_image = ProcessedImageField(upload_to='article/main_images/', verbose_name="Əsas Şəkil")
     slug = models.SlugField(max_length=100)
     content = RichTextField(verbose_name="Kontent")
@@ -56,6 +57,7 @@ class Article(models.Model):
     
     def save(self, *args, **kwargs):
         self.slug = get_slug(self.title)
+        self.description = text_from_html(self.content)
         super().save(*args, **kwargs)
         
     def __str__(self):
@@ -63,6 +65,9 @@ class Article(models.Model):
         
     def get_absolute_url(self):
         return reverse("article", kwargs={"pk": self.pk, "slug": self.slug})
+        
+    def related_articles(self):
+        return self.category.article_set.exclude(pk=self.pk)[:4]
     
     def slug_link(self):
         return get_slug_link(self.slug, self.get_absolute_url)

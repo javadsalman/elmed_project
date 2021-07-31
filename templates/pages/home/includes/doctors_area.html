@@ -25,39 +25,84 @@
             data-r-medium-nav="false" data-r-medium-dots="false" data-r-large="3" data-r-large-nav="false"
             data-r-large-dots="false" data-r-extra-large="4" data-r-extra-large-nav="false"
             data-r-extra-large-dots="false">
-            <div class="team-box-layout2">
-                <div class="item-img">
-                    <img src="{% static 'general/base/img/team/team33.png' %}" alt="Team1" class="img-fluid rounded-circle">
-                    <ul class="item-icon">
-                        <li>
-                            <a href="single-doctor.html">
-                                <i class="fas fa-plus"></i>
-                            </a>
-                        </li>
-                    </ul>
+            {% for doctor in doctors %}
+                <div class="team-box-layout2">
+                    <div class="item-img">
+                        <img src="{{ doctor.image.url }}" alt="Team1" class="img-fluid rounded-circle" style="width: 230px; height: 230px; object-fit: cover; object-position: top;">
+                        <ul class="item-icon">
+                            <li>
+                                <a href="single-doctor.html">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-content">
+                        {% if doctor.name|length < 17 %}
+                            <h3 class="item-title">
+                                <a href="single-doctor.html">Dr. {{ doctor.name }}</a>
+                            </h3>
+                        {% else %}
+                            <h4 class="item-title" style="height: 33px;">
+                                <a href="single-doctor.html">Dr. {{ doctor.name }}</a>
+                            </h4>
+                        {% endif %}
+                        
+                        <p>{{ doctor.profession }}</p>
+                    </div>
+                    <div class="item-schedule">
+                        {% with doctor.schedule as schedule %}
+                            {% if schedule.show_schedule %}
+                                <ul>
+                                    {% if schedule.monday_show %}
+                                        <li>Bazar Ertəsi
+                                            <span>{{ schedule.monday_start }} - {{ schedule.monday_end }}</span>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if schedule.tuesday_show %}
+                                        <li>Çərşənbə Axşamı
+                                            <span>{{ schedule.tuesday_start }} - {{ schedule.tuesday_end }}</span>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if schedule.wednesday_show %}
+                                        <li>Çərşənbə
+                                            <span>{{ schedule.wednesday_start }} - {{ schedule.wednesday_end }}</span>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if schedule.thursday_show %}
+                                        <li>Cümə Axşamı
+                                            <span>{{ schedule.thursday_start }} - {{ schedule.thursday_end }}</span>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if schedule.friday_show %}
+                                        <li>Cümə
+                                            <span>{{ schedule.friday_start }} - {{ schedule.friday_end }}</span>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if schedule.saturday_show %}
+                                        <li>Şənbə
+                                            <span>{{ schedule.saturday_start }} - {{ schedule.saturday_end }}</span>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if schedule.sunday_show %}
+                                        <li>Bazar
+                                            <span>{{ schedule.sunday_start }} - {{ schedule.sunday_end }}</span>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            {% endif %}
+                        {% endwith %}
+                        <a href="single-doctor.html" class="item-btn">MAKE AN APPOINTMENT</a>
+                    </div>
                 </div>
-                <div class="item-content">
-                    <h3 class="item-title">
-                        <a href="single-doctor.html">Dr. Zinia Zara</a>
-                    </h3>
-                    <p>Gynaecology</p>
-                </div>
-                <div class="item-schedule">
-                    <ul>
-                        <li>Mon - Tues
-                            <span>08.00 :17.00</span>
-                        </li>
-                        <li>Fri - Sat
-                            <span>09.00 :12.00</span>
-                        </li>
-                        <li>Sun - Mon
-                            <span>08.00 :17.00</span>
-                        </li>
-                    </ul>
-                    <a href="single-doctor.html" class="item-btn">MAKE AN APPOINTMENT</a>
-                </div>
-            </div>
-            <div class="team-box-layout2">
+            {% endfor %}
+            {% comment %} <div class="team-box-layout2">
                 <div class="item-img">
                     <img src="{% static 'general/base/img/team/team34.png' %}" alt="Team1" class="img-fluid rounded-circle">
                     <ul class="item-icon">
@@ -152,7 +197,7 @@
                     </ul>
                     <a href="single-doctor.html" class="item-btn">MAKE AN APPOINTMENT</a>
                 </div>
-            </div>
+            </div> {% endcomment %}
         </div>
     </div>
 </section>

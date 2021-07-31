@@ -1,5 +1,3 @@
-{% load static %}
-
 <!-- Blog-Area Start Here -->
 <section class="blog-wrap-layout4 bg-light-secondary100">
     <div class="container">
@@ -8,39 +6,34 @@
             <p>Eimply dummy text of the printing and typesetting industry industry's standard</p>
         </div>
         <div class="row">
-            <div class="single-item col-lg-4 col-md-12 col-12">
-                <div class="blog-box-layout5">
-                    <div class="item-img">
-                        <a href="single-blog.html">
-                            <img src="{% static 'general/base/img/blog/blog1.jpg' %}" class="img-fluid" alt="blog">
-                        </a>
-                        <div class="post-date">22
-                            <span>June</span>
+            {% for article in articles %}
+                <div class="single-item col-lg-4 col-md-12 col-12">
+                    <div class="blog-box-layout5">
+                        <div class="item-img">
+                            <a href="{{ article.get_absolute_url }}">
+                                <img src="{{ article.main_image.url }}" class="img-fluid" alt="blog" style="width: 350px; height: 195px; object-fit: cover;">
+                            </a>
+                            <div class="post-date">{{ article.updated|date:"n" }}
+                                <span>{{ article.updated|date:"F" }}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="item-content">
-                        <h3 class="item-title">
-                            <a href="single-blog.html">My dental office need a blog area scrambled type</a>
-                        </h3>
-                        <p>Rmply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since thRmply dummy text of the printing and typesetting industry.
-                        </p>
-                        <div class="post-actions-wrapper">
-                            <ul>
-                                <li>by <a href="#">Admin</a></li>
-                                <li>
-                                    <a href="#">
-                                        <i class="far fa-heart"></i>15</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="far fa-comments"></i>24</a>
-                                </li>
-                            </ul>
+                        <div class="item-content">
+                            <h3 class="item-title">
+                                <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+                            </h3>
+                            <p style="height: 144px;">{{ article.description }}</p>
+                            <div class="post-actions-wrapper">
+                                <ul>
+                                    {% if article.doctor %}
+                                        <li>Həkim: <a href="{{ article.doctor.get_absolute_url }}">{{ article.doctor.name }}</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="single-item col-lg-4 col-md-12 col-12">
+            {% endfor %}
+            {% comment %} <div class="single-item col-lg-4 col-md-12 col-12">
                 <div class="blog-box-layout5">
                     <div class="item-img">
                         <a href="single-blog.html">
@@ -55,7 +48,7 @@
                             <a href="single-blog.html">My dental office need a blog area scrambled type</a>
                         </h3>
                         <p>Rmply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since thRmply dummy text of the printing and typesetting industry.
-                        </p>
+                        </p>Rmply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since thRmply dummy text of the printing and typesetting industry.
                         <div class="post-actions-wrapper">
                             <ul>
                                 <li>by <a href="#">Admin</a></li>
@@ -103,7 +96,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> {% endcomment %}
         </div>
     </div>
 </section>

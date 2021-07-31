@@ -1,25 +1,23 @@
-{% load static %}
-
 <!-- Department Start Here -->
 <section class="departments-wrap-layout5 bg-light-accent100">
     <div class="container">
         <div class="row gutters-20">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="departments-box-layout4">
-                    <div class="box-content">
-                        <i class="flaticon-medical"></i>
-                        <h3 class="item-title"><a href="single-departments.html">Dental Care</a></h3>
-                        <p>There are many variations of of Lorem Ipsum available, but the majority have
-                            suffered..</p>
+            {% for departament in departaments %}
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="departments-box-layout4">
+                        <div class="box-content pt-4">
+                            <img src="{{ departament.icon.url }}" alt="{{ departament.name }}" style="width: 70px">
+                            <h3 class="item-title pt-3"><a href="{{ departament.get_absolute_url }}">{{ departament.name }}</a></h3>
+                            <p style="height: 100px;">{{ departament.description | truncatechars:85 }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            {% endfor %}
+            {% comment %} <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="departments-box-layout4">
-                    <div class="box-content">
-                        {% comment %} <i class="flaticon-pills"></i> {% endcomment %}
-                        <img src="{% static 'pages/departaments/heart.png' %}" class="mb-3 mt-4" alt="" width=70 height=70>
-                        <h3 class="item-title"><a href="single-departments.html">Medicine</a></h3>
+                    <div class="box-content pt-4">
+                        <img src="{% static 'pages/departaments/heart.png' %}" alt="" width=80 height=80>
+                        <h3 class="item-title pt-3"><a href="single-departments.html">Medicine</a></h3>
                         <p>There are many variations of of Lorem Ipsum available, but the majority have
                             suffered..</p>
                     </div>
@@ -94,7 +92,7 @@
                             suffered..</p>
                     </div>
                 </div>
-            </div>
+            </div> {% endcomment %}
         </div>
     </div>
 </section>

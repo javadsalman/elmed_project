@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'appointment',
     # EXTERNAL APPS
     'ckeditor',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -74,6 +75,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'url_handler': 'shared.template_tags.url_handler'
+            }
         },
     },
 ]

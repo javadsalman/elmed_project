@@ -13,9 +13,9 @@
      <!-- All Doctors Start Here -->
         <section class="team-wrap-layout3 bg-light-accent100">
             <div class="container">
-                {% include 'doctor/doctor_list/includes/search_area.html' %}
-                {% include 'doctor/doctor_list/includes/doctors_area.html' %}
-                {% include 'general_includes/pagination/pagination.html' %}
+                {% include 'doctor/doctor_list/includes/search_area.html' with departaments=departaments %}
+                {% include 'doctor/doctor_list/includes/doctors_area.html' with doctors=doctors %}
+                {% include 'general_includes/pagination/pagination.html' with page_obj=page_obj page_list=page_list %}
             </div>
         </section>
         <!-- All Doctors End Here -->

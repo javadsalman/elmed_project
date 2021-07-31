@@ -24,17 +24,17 @@
             data-r-medium-nav="false" data-r-medium-dots="false" data-r-large="4" data-r-large-nav="false"
             data-r-large-dots="false" data-r-extra-large="4" data-r-extra-large-nav="false"
             data-r-extra-large-dots="false">
-            <div class="departments-box-layout2">
-                <span class="departments-sl">01.</span>
+            {% for departament in departaments %}
+                <div class="departments-box-layout2">
+                    <span class="departments-sl">0{{ forloop.counter }}.</span>
+                    <div class="item-icon"><img src="{{ departament.icon.url }}" alt="{{ departament.name }}" style="width: 70px"></div>
+                    <h3 class="item-title"><a href="{{ departament.get_absolute_url }}">{{ departament.name }}</a></h3>
+                    <p style="height: 100px;">{{ departament.description | truncatechars:79 }}</p>
+                    <a class="item-btn" href="{{ departament.get_absolute_url }}">READ MORE<i class="fas fa-long-arrow-alt-right"></i></a>
+                </div>
+            {% endfor %}
 
-
-
-                <div class="item-icon"><i class="flaticon-medical"></i></div>
-                <h3 class="item-title"><a href="#">Dental Care</a></h3>
-                <p>Aorem Ipsumea dummy texte printing setting detry bringin eight challenges faced.</p>
-                <a class="item-btn" href="#">READ MORE<i class="fas fa-long-arrow-alt-right"></i></a>
-            </div>
-            <div class="departments-box-layout2">
+            {% comment %} <div class="departments-box-layout2">
                 <span class="departments-sl">02.</span>
                 <div class="item-icon"><i class="flaticon-pills"></i></div>
                 <h3 class="item-title"><a href="#">Medicine</a></h3>
@@ -54,7 +54,7 @@
                 <h3 class="item-title"><a href="#">Orthopedic</a></h3>
                 <p>Aorem Ipsumea dummy texte printing setting detry bringin eight challenges faced.</p>
                 <a class="item-btn" href="#">READ MORE<i class="fas fa-long-arrow-alt-right"></i></a>
-            </div>
+            </div> {% endcomment %}
         </div>
     </div>
 </section>

@@ -14,6 +14,7 @@ def make_unseen(modeladmin, request, queryset):
 
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
+    readonly_fields = ['seen']
     list_display = ['name', 'departament_link', 'doctor_link', 'phone', 'seen']
     list_filter = ['seen', 'departament', 'created']
     
@@ -24,10 +25,12 @@ class AppointmentAdmin(admin.ModelAdmin):
             '<a href="{}" target="_blank">{}</a>', 
             obj.doctor.get_absolute_url(), 
             f'Dr. {obj.doctor.name.split()[0]}')
+    doctor_link.short_description = 'Həkim'
         
     def departament_link(self, obj):
         return format_html(
             '<a href="{}">{}</a>', 
             obj.departament.get_absolute_url(), 
             obj.departament.name)
+    departament_link.short_description = 'Şöbə'
     
