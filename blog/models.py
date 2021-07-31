@@ -19,7 +19,7 @@ class Category(models.Model):
         verbose_name_plural = 'Kateqoriyalar'
 
     def get_absolute_url(self):
-        return reverse('blog') + '?type=category&value=%s' % self.slug
+        return reverse('blog') + '?category=%s' % self.slug
     
     def slug_link(self):
         return get_slug_link(self.slug, self.get_absolute_url)

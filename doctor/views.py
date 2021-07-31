@@ -1,6 +1,5 @@
 from doctor.filters import DoctorFilter
 from shared.pagination.pagination import get_page_list
-from typing import List
 from django.shortcuts import render
 from django.views.generic import ListView
 from doctor.models import Doctor
@@ -9,7 +8,7 @@ from django_filters.views import FilterView
 from doctor.filters import DoctorFilter
 
 # Create your views here.
-def doctor_detail(request):
+def doctor_detail(request, pk, slug):
     return render(request, 'doctor/doctor_detail/doctor_detail.html')
 
 class DoctorList(FilterView):

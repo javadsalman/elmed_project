@@ -2,228 +2,34 @@
 
 <div class="col-xl-9 col-lg-8 col-12">
     <div class="row">
-        <div class="single-item col-md-6 col-sm-12 col-12">
-            <div class="blog-box-layout4">
-                <div class="item-img">
-                    <a href="single-news.html">
-                        <img src="{% static 'general/base/img/blog/blog1.jpg' %}" class="img-fluid" alt="blog">
-                    </a>
-                    <div class="post-date">22
-                        <span>June</span>
+
+        {% for article in articles %}
+            <div class="single-item col-md-6 col-sm-12 col-12">
+                <div class="blog-box-layout4">
+                    <div class="item-img">
+                        <a href="{{ article.get_absolute_url }}">
+                            <img src="{{ article.main_image.url }}" alt="{{ article.title }}" style="width:420px; height:234px; object-fit:cover;" class="img-fluid">
+                        </a>
+                        <div class="post-date">{{ article.updated|date:"n" }}
+                            <span>{{ article.updated|date:"F" }}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="item-content">
-                    <h3 class="item-title">
-                        <a href="single-news.html">My dental office need a blog area scrambled type</a>
-                    </h3>
-                    <p>Rmply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the
-                        industry’s standard dummy text ever since thRmply dummy text of the
-                        printing
-                        and typesetting industry.
-                    </p>
-                    <div class="post-actions-wrapper">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="flaticon-people"></i>by
-                                    <span>admin</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="flaticon-interface"></i>15</a>
-                            </li>
-                        </ul>
+                    <div class="item-content">
+                        <h3 class="item-title">
+                            <a href="{{ article.get_absolute_url }}">{{ article.title }}</a>
+                        </h3>
+                        <p style="height: 120px;">{{ article.description }}</p>
+                        <div class="post-actions-wrapper">
+                            <ul>
+                                {% if article.doctor %}
+                                    <li>Həkim: <a href="{{ article.doctor.get_absolute_url }}">{{ article.doctor.name }}</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="single-item col-md-6 col-sm-12 col-12">
-            <div class="blog-box-layout4">
-                <div class="item-img">
-                    <a href="single-news.html">
-                        <img src="{% static 'general/base/img/blog/blog2.jpg' %}" class="img-fluid" alt="blog">
-                    </a>
-                    <div class="post-date">21
-                        <span>June</span>
-                    </div>
-                </div>
-                <div class="item-content">
-                    <h3 class="item-title">
-                        <a href="single-news.html">My dental office need a blog area scrambled type</a>
-                    </h3>
-                    <p>Rmply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the
-                        industry’s standard dummy text ever since thRmply dummy text of the
-                        printing
-                        and typesetting industry.
-                    </p>
-                    <div class="post-actions-wrapper">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="flaticon-people"></i>by
-                                    <span>admin</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="flaticon-interface"></i>15</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single-item col-md-6 col-sm-12 col-12">
-            <div class="blog-box-layout4">
-                <div class="item-img">
-                    <a href="single-news.html">
-                        <img src="{% static 'general/base/img/blog/blog3.jpg' %}" class="img-fluid" alt="blog">
-                    </a>
-                    <div class="post-date">20
-                        <span>June</span>
-                    </div>
-                </div>
-                <div class="item-content">
-                    <h3 class="item-title">
-                        <a href="single-news.html">My dental office need a blog area scrambled type</a>
-                    </h3>
-                    <p>Rmply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the
-                        industry’s standard dummy text ever since thRmply dummy text of the
-                        printing
-                        and typesetting industry.
-                    </p>
-                    <div class="post-actions-wrapper">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="flaticon-people"></i>by
-                                    <span>admin</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="flaticon-interface"></i>15</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single-item col-md-6 col-sm-12 col-12">
-            <div class="blog-box-layout4">
-                <div class="item-img">
-                    <a href="single-news.html">
-                        <img src="{% static 'general/base/img/blog/blog10.jpg' %}" class="img-fluid" alt="blog">
-                    </a>
-                    <div class="post-date">20
-                        <span>June</span>
-                    </div>
-                </div>
-                <div class="item-content">
-                    <h3 class="item-title">
-                        <a href="single-news.html">My dental office need a blog area scrambled type</a>
-                    </h3>
-                    <p>Rmply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the
-                        industry’s standard dummy text ever since thRmply dummy text of the
-                        printing
-                        and typesetting industry.
-                    </p>
-                    <div class="post-actions-wrapper">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="flaticon-people"></i>by
-                                    <span>admin</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="flaticon-interface"></i>15</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single-item col-md-6 col-sm-12 col-12">
-            <div class="blog-box-layout4">
-                <div class="item-img">
-                    <a href="single-news.html">
-                        <img src="{% static 'general/base/img/blog/blog11.jpg' %}" class="img-fluid" alt="blog">
-                    </a>
-                    <div class="post-date">20
-                        <span>June</span>
-                    </div>
-                </div>
-                <div class="item-content">
-                    <h3 class="item-title">
-                        <a href="single-news.html">My dental office need a blog area scrambled type</a>
-                    </h3>
-                    <p>Rmply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the
-                        industry’s standard dummy text ever since thRmply dummy text of the
-                        printing
-                        and typesetting industry.
-                    </p>
-                    <div class="post-actions-wrapper">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="flaticon-people"></i>by
-                                    <span>admin</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="flaticon-interface"></i>15</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single-item col-md-6 col-sm-12 col-12">
-            <div class="blog-box-layout4">
-                <div class="item-img">
-                    <a href="single-news.html">
-                        <img src="{% static 'general/base/img/blog/blog12.jpg' %}" class="img-fluid" alt="blog">
-                    </a>
-                    <div class="post-date">20
-                        <span>June</span>
-                    </div>
-                </div>
-                <div class="item-content">
-                    <h3 class="item-title">
-                        <a href="single-news.html">My dental office need a blog area scrambled type</a>
-                    </h3>
-                    <p>Rmply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the
-                        industry’s standard dummy text ever since thRmply dummy text of the
-                        printing
-                        and typesetting industry.
-                    </p>
-                    <div class="post-actions-wrapper">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <i class="flaticon-people"></i>by
-                                    <span>admin</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="flaticon-interface"></i>15</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
-    {% include 'general_includes/pagination/pagination.html' %}
+    {% include 'general_includes/pagination/pagination.html' with page_obj=page_obj page_list=page_list%}
 </div>
