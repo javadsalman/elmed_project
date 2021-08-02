@@ -3,7 +3,7 @@ from doctor.models import Doctor
 from shared.model.utils import get_image_tag, get_slug, get_slug_link, text_from_html
 from django.db import models
 from django.urls.base import reverse
-from imagekit.models import ProcessedImageField
+from imagekit.models import ProcessedImageField, ImageSpecField
 
 # Create your models here.
 class Category(models.Model):
@@ -42,7 +42,8 @@ class Article(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, verbose_name="Kateqoriya")
     title = models.CharField(max_length=60, null=False, blank=False, verbose_name="Başlıq")
     description = models.CharField(max_length=200, null=True, blank=True)
-    main_image = ProcessedImageField(upload_to='article/main_images/', verbose_name="Əsas Şəkil")
+    main_image = ProcessedImageField(upload_to='article/main_images/', verbose_name="Əsas Şəkil", options={'quality': 180})
+    thumbnail = ImageSpecField(source='main_image', format='JPEG', options={'quality': 60})
     slug = models.SlugField(max_length=100)
     content = RichTextField(verbose_name="Kontent")
     show = models.BooleanField(default=True, verbose_name='Bloqda görünsünmü?')

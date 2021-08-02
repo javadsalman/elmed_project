@@ -1,8 +1,7 @@
-from django.conf.urls.i18n import urlpatterns
 from django.urls import path
-from blog.views import article, ArticleList
+from blog.views import article, ArticleList, ArticleDeatil
 
 urlpatterns = [
     path('', ArticleList.as_view(), name='blog'),
-    path('<int:pk>/<str:slug>/', article, name='article')
+    path('<int:pk>/<str:slug>/', ArticleDeatil.as_view(), name='article')
 ]

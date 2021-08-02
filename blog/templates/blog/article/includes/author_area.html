@@ -2,11 +2,10 @@
 
 <div class="blog-author">
     <div class="media media-none--xs">
-        <img src="{% static 'general/base/img/blog/blog15.jpg' %}" alt="Blog Author" class="rounded-circle media-img-auto">
+        <img src="{{ article.doctor.image.url }}" style="width: 130px; height: 130px; object-fit: cover; object-postion: top;" alt="Blog Author" class="rounded-circle media-img-auto">
         <div class="media-body">
-            <h4 class="author-title">About The Author</h4>
-            <p>Eut also the leap into electronic.Eimply dummy text of the printing and type
-                setting indusetry Lorem Ipsum has been the industry's standard.</p>
+            <h4 class="author-title">{{ article.doctor.name}}</h4>
+            <p>{{ article.doctor.profession }}</p>
             <ul class="author-social">
                 <li>
                     <a href="#"><i class="fab fa-facebook-f"></i></a>

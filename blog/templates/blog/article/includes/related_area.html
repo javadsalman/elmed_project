@@ -1,8 +1,19 @@
-{% load static %}
-
 <div class="widget widget-recent">
     <h3 class="section-title title-bar-primary">Related Posts</h3>
-    <div class="media">
+    {% for related in article.related_articles %}
+        <div class="media">
+            <a href="{{ related.get_absolute_url }}">
+                <img src="{{ related.thumbnail.url }}" style="width: 100px; height: 89px; object-fit: cover; object-position: center;" alt="news" class="img-fluid">
+            </a>
+            <div class="media-body space-sm">
+                <div class="post-date">{{ article.updated|date:"F j, Y"}}</div>
+                <h4 class="post-title">
+                    <a href="{{ related.get_absolute_url }}">{{ related.title }}</a>
+                </h4>
+            </div>
+        </div>
+    {% endfor %}
+    {% comment %} <div class="media">
         <a href="#">
             <img src="{% static 'general/base/img/blog/blog6.jpg' %}" alt="news" class="img-fluid">
         </a>
@@ -45,5 +56,5 @@
                 <a href="#">Achieving Better Health Cancer treatment for.</a>
             </h4>
         </div>
-    </div>
+    </div> {% endcomment %}
 </div>

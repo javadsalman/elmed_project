@@ -1,6 +1,6 @@
 from blog.filters import BlogFilter
 from django.shortcuts import render
-from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from blog.models import Article, Category
 from shared.pagination.pagination import get_page_list
 from django.db.models import Count
@@ -13,6 +13,10 @@ def blog(request):
 def article(request, pk, slug):
     return render(request, 'blog/article/article.html')
 
+class ArticleDeatil(DetailView):
+    template_name = 'blog/article/article.html'
+    model = Article
+    
 
 class ArticleList(FilterView):
     template_name = 'blog/blog/blog.html'

@@ -10,7 +10,7 @@
                         <a href="{{ article.get_absolute_url }}">
                             <img src="{{ article.main_image.url }}" alt="{{ article.title }}" style="width:420px; height:234px; object-fit:cover;" class="img-fluid">
                         </a>
-                        <div class="post-date">{{ article.updated|date:"n" }}
+                        <div class="post-date">{{ article.updated|date:"j" }}
                             <span>{{ article.updated|date:"F" }}</span>
                         </div>
                     </div>

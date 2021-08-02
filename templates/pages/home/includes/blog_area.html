@@ -13,7 +13,7 @@
                             <a href="{{ article.get_absolute_url }}">
                                 <img src="{{ article.main_image.url }}" class="img-fluid" alt="blog" style="width: 350px; height: 195px; object-fit: cover;">
                             </a>
-                            <div class="post-date">{{ article.updated|date:"n" }}
+                            <div class="post-date">{{ article.updated|date:"j" }}
                                 <span>{{ article.updated|date:"F" }}</span>
                             </div>
                         </div>
