@@ -80,7 +80,6 @@ class Article(models.Model):
 
         
 class ArticleImage(models.Model):
-    title = models.CharField(max_length=100, verbose_name="Başlıq")
     image = ProcessedImageField(upload_to='blog/article/images/', options={'quality': 90}, verbose_name="Şəkil Faylı")
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
     updated = models.DateTimeField(auto_now=True)

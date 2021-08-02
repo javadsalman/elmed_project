@@ -4,22 +4,27 @@
             <div class="team-box-layout1">
                 <div class="media media-none-lg media-none-md media-none--xs">
                     <div class="item-img">
-                        <img src="{{ doctor.image.url }}" alt="Team1" class="img-fluid rounded-circle media-img-auto" style="width: 170px; height: 170px; object-fit: cover; object-position: top;">
+                        <a href="{{ doctor.get_absolute_url }}">
+                            <img src="{{ doctor.image.url }}" alt="Team1" class="img-fluid rounded-circle media-img-auto" style="width: 170px; height: 170px; object-fit: cover; object-position: top;">
+                        </a>
                     </div>
                     <div class="media-body">
                         <div class="item-content">
                             <h4 class="item-title">
-                                <a href="single-doctor.html">{{ doctor.name }}</a>
+                                <a href="{{ doctor.get_absolute_url }}">{{ doctor.name }}</a>
                             </h4>
                             <p class="designation">{{ doctor.profession }}</p>
                             <div class="item-degree">{{ doctor.degree }}</div>
                             <ul class="item-btns">
                                 <li>
-                                    <a href="single-doctor.html" class="item-btn btn-ghost">View Profile</a>
+                                    <a href="{{ doctor.get_absolute_url }}" class="item-btn btn-ghost">View Profile</a>
                                 </li>
                                 <li>
-                                    <a href="single-doctor.html" class="item-btn btn-fill">Make an
-                                        Appointment</a>
+                                    <a 
+                                        href="{% url 'appointment' %}?doctor={{ doctor.slug }}&departament={{ doctor.departament.slug }}" 
+                                        class="item-btn btn-fill">
+                                        Make an Appointment
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -28,194 +33,4 @@
             </div>
         </div>
     {% endfor %}
-
-    {% comment %} <div class="col-lg-6 col-md-6">
-        <div class="team-box-layout1">
-            <div class="media media-none-lg media-none-md media-none--xs">
-                <div class="item-img">
-                    <img src="{% static 'general/base/img/team/team22.png' %}" alt="Team1" class="img-fluid rounded-circle media-img-auto">
-                </div>
-                <div class="media-body">
-                    <div class="item-content">
-                        <h4 class="item-title">
-                            <a href="single-doctor.html">Dr.Mark Willy</a>
-                        </h4>
-                        <p class="designation">Associate Eye</p>
-                        <div class="item-degree">BDS, FCPS (Hons), PhD (Japan)</div>
-                        <ul class="item-btns">
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-ghost">View Profile</a>
-                            </li>
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-fill">Make an
-                                    Appointment</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-md-6">
-        <div class="team-box-layout1">
-            <div class="media media-none-lg media-none-md media-none--xs">
-                <div class="item-img">
-                    <img src="{% static 'general/base/img/team/team23.png' %}" alt="Team1" class="img-fluid rounded-circle media-img-auto">
-                </div>
-                <div class="media-body">
-                    <div class="item-content">
-                        <h4 class="item-title">
-                            <a href="single-doctor.html">Dr.Mark Willy</a>
-                        </h4>
-                        <p class="designation">Associate Eye</p>
-                        <div class="item-degree">BDS, FCPS (Hons), PhD (Japan)</div>
-                        <ul class="item-btns">
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-ghost">View Profile</a>
-                            </li>
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-fill">Make an
-                                    Appointment</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-md-6">
-        <div class="team-box-layout1">
-            <div class="media media-none-lg media-none-md media-none--xs">
-                <div class="item-img">
-                    <img src="{% static 'general/base/img/team/team24.png' %}" alt="Team1" class="img-fluid rounded-circle media-img-auto">
-                </div>
-                <div class="media-body">
-                    <div class="item-content">
-                        <h4 class="item-title">
-                            <a href="single-doctor.html">Dr.Mark Willy</a>
-                        </h4>
-                        <p class="designation">Associate Eye</p>
-                        <div class="item-degree">BDS, FCPS (Hons), PhD (Japan)</div>
-                        <ul class="item-btns">
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-ghost">View Profile</a>
-                            </li>
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-fill">Make an
-                                    Appointment</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-md-6">
-        <div class="team-box-layout1">
-            <div class="media media-none-lg media-none-md media-none--xs">
-                <div class="item-img">
-                    <img src="{% static 'general/base/img/team/team25.png' %}" alt="Team1" class="img-fluid rounded-circle media-img-auto">
-                </div>
-                <div class="media-body">
-                    <div class="item-content">
-                        <h4 class="item-title">
-                            <a href="single-doctor.html">Dr.Mark Willy</a>
-                        </h4>
-                        <p class="designation">Associate Eye</p>
-                        <div class="item-degree">BDS, FCPS (Hons), PhD (Japan)</div>
-                        <ul class="item-btns">
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-ghost">View Profile</a>
-                            </li>
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-fill">Make an
-                                    Appointment</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-md-6">
-        <div class="team-box-layout1">
-            <div class="media media-none-lg media-none-md media-none--xs">
-                <div class="item-img">
-                    <img src="{% static 'general/base/img/team/team26.png' %}" alt="Team1" class="img-fluid rounded-circle media-img-auto">
-                </div>
-                <div class="media-body">
-                    <div class="item-content">
-                        <h4 class="item-title">
-                            <a href="single-doctor.html">Dr.Mark Willy</a>
-                        </h4>
-                        <p class="designation">Associate Eye</p>
-                        <div class="item-degree">BDS, FCPS (Hons), PhD (Japan)</div>
-                        <ul class="item-btns">
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-ghost">View Profile</a>
-                            </li>
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-fill">Make an
-                                    Appointment</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-md-6">
-        <div class="team-box-layout1">
-            <div class="media media-none-lg media-none-md media-none--xs">
-                <div class="item-img">
-                    <img src="{% static 'general/base/img/team/team27.png' %}" alt="Team1" class="img-fluid rounded-circle media-img-auto">
-                </div>
-                <div class="media-body">
-                    <div class="item-content">
-                        <h4 class="item-title">
-                            <a href="single-doctor.html">Dr.Mark Willy</a>
-                        </h4>
-                        <p class="designation">Associate Eye</p>
-                        <div class="item-degree">BDS, FCPS (Hons), PhD (Japan)</div>
-                        <ul class="item-btns">
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-ghost">View Profile</a>
-                            </li>
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-fill">Make an
-                                    Appointment</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-6 col-md-6">
-        <div class="team-box-layout1">
-            <div class="media media-none-lg media-none-md media-none--xs">
-                <div class="item-img">
-                    <img src="{% static 'general/base/img/team/team28.png' %}" alt="Team1" class="img-fluid rounded-circle media-img-auto">
-                </div>
-                <div class="media-body">
-                    <div class="item-content">
-                        <h4 class="item-title">
-                            <a href="single-doctor.html">Dr.Mark Willy</a>
-                        </h4>
-                        <p class="designation">Associate Eye</p>
-                        <div class="item-degree">BDS, FCPS (Hons), PhD (Japan)</div>
-                        <ul class="item-btns">
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-ghost">View Profile</a>
-                            </li>
-                            <li>
-                                <a href="single-doctor.html" class="item-btn btn-fill">Make an
-                                    Appointment</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> {% endcomment %}
 </div>

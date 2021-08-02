@@ -6,7 +6,7 @@ from departament.models import Departament, DepartamentImage, DepartamentSchedul
 admin.site.register(DepartamentSchedule)
 
 class DepartamentImageInline(admin.TabularInline):
-    fields = ['title', 'image_tag', 'image', 'created']
+    fields = ['image_tag', 'image', 'created']
     readonly_fields = ['image_tag', 'created']
     model = DepartamentImage
     extra = 1

@@ -49,7 +49,6 @@ class Departament(models.Model):
         
 
 class DepartamentImage(models.Model):
-    title = models.CharField(max_length=100, verbose_name="Başlıq")
     departament = models.ForeignKey(Departament, on_delete=models.CASCADE)
     image = ProcessedImageField(upload_to='departament/images/', options={'quality': 90}, verbose_name="Şəkil Faylı")
     def image_tag(self):

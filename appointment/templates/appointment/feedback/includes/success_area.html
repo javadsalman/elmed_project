@@ -1,0 +1,41 @@
+{% load static %}
+
+<section class="error-wrap-layout1 bg-light-accent100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="error-box-layout1 row">
+                    {% if success %}
+                        <div class="col-12 col-lg-6 order-2 order-lg-1">
+                            
+                            <h2 class="title">
+                                Məlumatlar uğurla göndərildi!
+                            </h2>
+                            <p class="details">
+                                Ən qısa müddətdə sizinlə əlaqə saxlayacağıq!
+                            </p>
+                            <a href="#" class="item-btn">Ana Səhifə</a>
+                        </div>
+                        <div class="col-12 col-md-6 orer-1 order-lg-2">
+                            <img src="{% static 'pages/feedback/pexels-gustavo-fring-4173249.jpg' %}" alt="404" class="img-fluid">
+                        </div>
+                    {% else %}
+                        <div class="col-12 col-lg-6 order-2 order-lg-1">
+                            
+                            <h2 class="title">
+                                Xəta Baş Verdi!
+                            </h2>
+                            <p class="details">
+                                Məlumatlar göndərilərkən xəta baş verdi. Yenidən göndərməyi sınayın!
+                            </p>
+                            <a href="#" class="item-btn">Qeydiyyat</a>
+                        </div>
+                        <div class="col-12 col-md-6 orer-1 order-lg-2">
+                            <img src="{% static 'pages/feedback/pexels-pixabay-42230.jpg' %}" alt="404" class="img-fluid">
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

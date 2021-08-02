@@ -18,7 +18,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class ArticleImageInline(admin.TabularInline):
-    fields = ['title', 'image_tag', 'image', 'created']
+    fields = ['image_tag', 'image', 'created']
     readonly_fields = ['image_tag', 'created']
     model = ArticleImage
     extra = 1
