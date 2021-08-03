@@ -3,7 +3,19 @@ from django.utils.html import format_html
 from departament.models import Departament, DepartamentImage, DepartamentSchedule
 
 # Register your models here.
-admin.site.register(DepartamentSchedule)
+@admin.action(description='Seçilənləri Saytda Gizlət')
+def hide_schedule_action(modeladmin, request, queryset):
+    queryset.update(show_schedule=False)
+
+@admin.action(description='Seçilənləri Saytda Göstər')
+def show_schedule_action(modeladmin, request, queryset):
+    queryset.update(show_schedule=True)
+
+@admin.register(DepartamentSchedule)
+class DepartamentScheduleAdmin(admin.ModelAdmin):
+    list_display = ['title', 'show_schedule', 'updated']
+    actions = [hide_schedule_action, show_schedule_action]
+
 
 class DepartamentImageInline(admin.TabularInline):
     fields = ['image_tag', 'image', 'created']

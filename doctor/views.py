@@ -1,15 +1,17 @@
 from doctor.filters import DoctorFilter
 from shared.pagination.pagination import get_page_list
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import DetailView
 from doctor.models import Doctor
 from departament.models import Departament
 from django_filters.views import FilterView
 from doctor.filters import DoctorFilter
 
 # Create your views here.
-def doctor_detail(request, pk, slug):
-    return render(request, 'doctor/doctor_detail/doctor_detail.html')
+class DoctorDetail(DetailView):
+    template_name = 'doctor/doctor_detail/doctor_detail.html'
+    context_object_name = 'doctor'
+    model = Doctor
 
 class DoctorList(FilterView):
     template_name = 'doctor/doctor_list/doctor_list.html'

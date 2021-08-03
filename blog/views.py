@@ -1,6 +1,6 @@
 from blog.filters import BlogFilter
 from django.shortcuts import render
-from django.views.generic.detail import DetailView
+from django.views.generic import DetailView
 from blog.models import Article, Category
 from shared.pagination.pagination import get_page_list
 from django.db.models import Count

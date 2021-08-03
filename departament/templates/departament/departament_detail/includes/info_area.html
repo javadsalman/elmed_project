@@ -3,11 +3,12 @@
 <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade active show" id="department1">
         <div class="single-departments-box-layout1">
-            <div class="single-departments-img">
+            {% comment %} <div class="single-departments-img">
                 <img alt="single" src="{% static 'general/base/img/department/department21.jpg' %}">
-            </div>
+            </div> {% endcomment %}
             <div class="item-content">
-                <div class="item-content-wrap">
+                {{ departament.about | safe }}
+                {% comment %} <div class="item-content-wrap">
                     <h3 class="item-title title-bar-primary5">Eye Department</h3>
                     <span class="sub-title">Dorem ipsum dolor sit amet, consectetuer adipiscing
                         elit, sed diam nonummy nibh erty cidunt utter laoreet dolore magna
@@ -40,8 +41,8 @@
                         Hymenaeos eros. Nisi mauris et adipisc.Aliquam class bibendum mattis
                         fusceut persecenas. Quisque. Maecenas. Eros mus. Hymenaeos eros. Nisi
                         mauris et adipisc.</p>
-                </div>
-                <div class="item-specialist-wrap">
+                </div> {% endcomment %}
+                <div class="item-specialist-wrap mt-5">
                     <h3 class="item-title title-bar-primary7">Meet Our Doctors</h3>
                 </div>
                 <div class="row">

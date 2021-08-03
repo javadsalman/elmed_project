@@ -57,7 +57,8 @@
                             <div class="col-sm-6 form-group">
                                 <i class="far fa-calendar-alt"></i>
                                 <input type="text" class="form-control rt-date" placeholder="Appointment Date"
-                                    name="date" id="form-date" data-error="Subject field is required" />
+                                    name="date" id="form-date" data-error="Subject field is required"
+                                    {% if selected_date %}value="{{ selected_date|date:'Y-m-d' }}"{% endif %} />
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="col-sm-6 form-group">

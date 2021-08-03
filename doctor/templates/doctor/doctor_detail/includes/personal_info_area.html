@@ -1,15 +1,26 @@
 <div class="widget widget-team-contact">
     <h3 class="section-title title-bar-primary2">Personal Info</h3>
     <ul>
-        <li>Phone:<span>+ (123) 1800-567</span></li>
-        <li>Office:<span>+ 88500-567</span></li>
-        <li>E-mail:<span>ziniazara@gmail.com</span></li>
+        <li>Phone:<span>{{ doctor.phone}}</span></li>
+        <li>E-mail:<span>{{ doctor.email }}</span></li>
         <li class="d-flex">Social:
             <ul class="widget-social">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                
+                {% if doctor.facebook %}
+                    <li><a href="{{ doctor.facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+                {% endif %}
+
+                {% if doctor.youtube %}
+                    <li><a href="{{ doctor.youtube }}"><i class="fab fa-youtube"></i></a></li>
+                {% endif %}
+                    
+                {% if doctor.instagram %}
+                    <li><a href="{{ doctor.instagram }}"><i class="fab fa-instagram"></i></a></li>
+                {% endif %}
+
+                {% if doctor.whatsapp %}
+                    <li><a href="{{ doctor.whatsapp }}"><i class="fab fa-whatsapp"></i></a></li>
+                {% endif %}
             </ul>
         </li>
     </ul>

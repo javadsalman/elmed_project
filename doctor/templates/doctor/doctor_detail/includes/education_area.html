@@ -10,7 +10,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                {% for education in doctor.doctoreducation_set.all %}
+                    <tr>
+                        <td>{{ education.year }}</td>
+                        <td>{{ education.degree }}</td>
+                        <td>{{ education.place }}</td>
+                    </tr>
+                {% endfor %}
+                {% comment %} <tr>
                     <td>2006</td>
                     <td>MBBS, M.D</td>
                     <td>University of Wyoming</td>
@@ -19,7 +26,7 @@
                     <td>2010</td>
                     <td>M.D. of Medicine</td>
                     <td>Netherland Medical College</td>
-                </tr>
+                </tr> {% endcomment %}
             </tbody>
         </table>
     </div>

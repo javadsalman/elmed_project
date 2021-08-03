@@ -12,8 +12,8 @@ class DoctorSchedule(Schedule):
     class Meta:
         verbose_name = "Həkim İş Rejmi"
         verbose_name_plural = "Həkim İş Rejimləri"
+        
 
-# Create your models here.
 class Doctor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='İstifadəçi Hesabı')
     name = models.CharField(max_length=50, verbose_name='Ad Soyad')
@@ -28,6 +28,7 @@ class Doctor(models.Model):
     whatsapp = models.URLField(max_length=300, verbose_name='Whatsapp Linki', null=True, blank=True)
     youtube = models.URLField(max_length=300, verbose_name='YouTube Linki', null=True, blank=True)
     phone = models.CharField(max_length=50, verbose_name='Telefon Nömrəsi', null=True, blank=True)
+    email = models.EmailField(max_length=50, null=True, blank=True, verbose_name='Mail Ünvanı')
     schedule = models.ForeignKey(DoctorSchedule, on_delete=models.PROTECT, verbose_name='İş Rejmi')
     updated = models.DateTimeField(auto_now_add=True, verbose_name='Son Dəyişdirilmə Tarixi')
     created = models.DateTimeField(auto_now=True, verbose_name='Yaradılma Tarixi')
@@ -62,3 +63,15 @@ class Doctor(models.Model):
     
     
     
+class DoctorEducation(models.Model):
+    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
+    year = models.IntegerField(verbose_name='İl')
+    degree = models.CharField(max_length=50, verbose_name='Adı')
+    place = models.CharField(max_length=50, verbose_name='Təhsil Aldığı Yer')
+    updated = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ['year']    
+        verbose_name = 'Təhsil'
+        verbose_name_plural = 'Həkimin Təhsil Məlumatları'

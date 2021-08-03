@@ -10,26 +10,115 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Saturday</td>
-                    <td>10.00 am - 12.00 pm</td>
-                    <td class="schedule-btn"><a href="#" class="item-btn">Appointment</a></td>
-                </tr>
-                <tr>
-                    <td>Monday</td>
-                    <td>05.00 pm - 09.00 pm</td>
-                    <td class="schedule-btn"><a href="#" class="item-btn">Appointment</a></td>
-                </tr>
-                <tr>
-                    <td>Wednesday</td>
-                    <td>07.00 pm - 10.00 pm</td>
-                    <td class="schedule-btn"><a href="#" class="item-btn">Appointment</a></td>
-                </tr>
-                <tr>
-                    <td>Friday</td>
-                    <td>08.00 pm - 11.00 pm</td>
-                    <td class="schedule-btn"><a href="#" class="item-btn">Appointment</a></td>
-                </tr>
+                {% with doctor.schedule as schedule %}
+                    {% if schedule.show_schedule %}
+                        {% if schedule.monday_show %}
+                            <tr>
+                                <td>Bazar Ertəsi</td>
+                                <td>{{ schedule.monday_start}} - {{ schedule.monday_end }}</td>
+                                <td class="schedule-btn">
+                                    <a 
+                                        href="{% url 'appointment' %}?weekday=1&departament={{ doctor.departament.slug }}&doctor={{ doctor.slug }}" 
+                                        class="item-btn">
+                                        Appointment
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endif %}
+
+
+                        {% if schedule.tuesday_show %}
+                            <tr>
+                                <td>Çərşənbə Axşamı</td>
+                                <td>{{ schedule.tuesday_start}} - {{ schedule.tuesday_end }}</td>
+                                <td class="schedule-btn">
+                                    <a 
+                                        href="{% url 'appointment' %}?weekday=2&departament={{ doctor.departament.slug }}&doctor={{ doctor.slug }}" 
+                                        class="item-btn">
+                                        Appointment
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endif %}
+
+
+                        {% if schedule.wednesday_show %}
+                            <tr>
+                                <td>Çərşənbə</td>
+                                <td>{{ schedule.wednesday_start}} - {{ schedule.wednesday_end }}</td>
+                                <td class="schedule-btn">
+                                    <a 
+                                        href="{% url 'appointment' %}?weekday=3&departament={{ doctor.departament.slug }}&doctor={{ doctor.slug }}" 
+                                        class="item-btn">
+                                        Appointment
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endif %}
+
+
+                        {% if schedule.thursday_show %}
+                            <tr>
+                                <td>Cümə Axşamı</td>
+                                <td>{{ schedule.thursday_start}} - {{ schedule.thursday_end }}</td>
+                                <td class="schedule-btn">
+                                    <a 
+                                        href="{% url 'appointment' %}?weekday=4&departament={{ doctor.departament.slug }}&doctor={{ doctor.slug }}" 
+                                        class="item-btn">
+                                        Appointment
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endif %}
+
+
+                        {% if schedule.friday_show %}
+                            <tr>
+                                <td>Cümə</td>
+                                <td>{{ schedule.friday_start}} - {{ schedule.friday_end }}</td>
+                                <td class="schedule-btn">
+                                    <a 
+                                        href="{% url 'appointment' %}?weekday=5&departament={{ doctor.departament.slug }}&doctor={{ doctor.slug }}" 
+                                        class="item-btn">
+                                        Appointment
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endif %}
+
+
+                        {% if schedule.saturday_show %}
+                            <tr>
+                                <td>Şənbə</td>
+                                <td>{{ schedule.saturday_start}} - {{ schedule.saturday_end }}</td>
+                                <td class="schedule-btn">
+                                    <a 
+                                        href="{% url 'appointment' %}?weekday=6&departament={{ doctor.departament.slug }}&doctor={{ doctor.slug }}" 
+                                        class="item-btn">
+                                        Appointment
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endif %}
+
+
+                        {% if schedule.sunday_show %}
+                            <tr>
+                                <td>Bazar</td>
+                                <td>{{ schedule.sunday_start}} - {{ schedule.sunday_end }}</td>
+                                <td class="schedule-btn">
+                                    <a 
+                                        href="{% url 'appointment' %}?weekday=7&departament={{ doctor.departament.slug }}&doctor={{ doctor.slug }}" 
+                                        class="item-btn">
+                                        Appointment
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endif %}
+
+                    {% endif %}
+                        
+                {% endwith %}
             </tbody>
         </table>
     </div>
