@@ -8,6 +8,13 @@ from departament.models import Departament
 class AboutView(TemplateView):
     template_name = 'pages/about/about.html'
     
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["departaments"] = Departament.objects.all()
+        context["doctors"] = Doctor.objects.all()
+        return context
+    
+    
     
 class ContactView(TemplateView):
     template_name = 'pages/contact/contact.html'

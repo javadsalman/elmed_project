@@ -23,6 +23,7 @@ def appointment(request):
             form.save()
             return redirect('feedback', result='ugurlu')
         else:
+            print(form.errors)
             return redirect('feedback', result='ugursuz')
             
             

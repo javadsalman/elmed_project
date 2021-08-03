@@ -1,61 +1,64 @@
 <div class="widget widget-appointment">
     <h3 class="section-title-light title-bar-light">Book Appointment</h3>
-    <form>
+    <form action="{% url 'appointment' %}" method="post">
+        {% csrf_token %}
         <div class="form-group">
-            <select class="select2" data-error="Phone field is required" required>
-                <option value="">Select Department *</option>
-                <option value="1">Gynaecology</option>
-                <option value="2">Cardiology</option>
-                <option value="3">Orthopaedics</option>
-                <option value="4">Medicine</option>
+            <select name="departament" class="select2" data-error="Phone field is required">
+                <option value="">Select Department</option>
+                {% for departament in departaments %}
+                    <option 
+                        value="{{ departament.id }}"
+                        {% if selected_departament == departament.slug %}selected{% endif %}>
+                        {{ departament.name }} Şöbəsi
+                    </option>
+                {% endfor %}
             </select>
             <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
-            <select class="select2" data-error="Phone field is required" required>
-                <option value="">Choose Doctor by Name *</option>
-                <option value="1">Dr. Mou</option>
-                <option value="2">Dr. Kalvin</option>
-                <option value="3">Dr. Mark Willy</option>
-                <option value="4">Dr. Zinia Zara</option>
+            <select name="doctor" class="select2" data-error="Phone field is required">
+                <option value="">Choose Doctor by Name</option>
+                {% for doctor in doctors %}
+                    <option value="{{ doctor.id }}">Dr. {{ doctor.name }}</option>
+                {% endfor %}
             </select>
             <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
             <input type="text" placeholder="Patient Name *" class="form-control" name="name" id="form-name"
-                data-error="Name field is required" required>
+                data-error="Name field is required" required maxlength="50">
             <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
-            <input type="text" placeholder="Phone *" class="form-control" name="Phone" id="form-phone"
-                data-error="Phone field is required" required>
+            <input type="text" placeholder="Phone *" class="form-control" name="phone" id="form-phone"
+                data-error="Phone field is required" required maxlength="50">
             <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
-            <input type="email" placeholder="E-mail *" class="form-control" name="email" id="form-email"
-                data-error="E-mail field is required" required>
+            <input type="email" placeholder="E-mail" class="form-control" name="email" id="form-email"
+                data-error="E-mail field is required" required maxlength="50">
             <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
             <i class="far fa-calendar-alt"></i>
-            <input type="text" class="form-control rt-date" placeholder="Appointment Date *"
-                name="date" id="form-date" data-error="Subject field is required" required />
+            <input type="text" class="form-control rt-date" placeholder="Appointment Date"
+                name="date" id="form-date" data-error="Subject field is required"/>
             <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
             <i class="far fa-clock"></i>
-            <input type="text" class="form-control rt-time" placeholder="Time *" name="time" id="form-time"
-                data-error="Subject field is required" required />
+            <input type="text" class="form-control rt-time" placeholder="Time" name="time" id="form-time"
+                data-error="Subject field is required" />
             <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
-            <textarea placeholder="Type Appintment Note" class="textarea form-control" name="message"
+            <textarea placeholder="Type Appintment Note *" class="textarea form-control" name="note"
                 id="form-message" rows="5" cols="20" data-error="Message field is required"
                 required></textarea>
             <div class="help-block with-errors"></div>
         </div>
         <div class="form-group text-center">
-            <button class="item-btn">BOOK NOW<i class="fas fa-chevron-right"></i></button>
+            <button class="item-btn" type="submit">BOOK NOW<i class="fas fa-chevron-right"></i></button>
         </div>
     </form>
 </div>

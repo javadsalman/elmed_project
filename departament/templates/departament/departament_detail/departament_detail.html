@@ -7,7 +7,7 @@
 {% endblock links %}
 
 {% block body %}
-{% include 'general_includes/banner/banner.html' %}
+{% include 'general_includes/banner/banner.html' with adress_string="Əsas Səhifə,Şöbələr" name=departament.name%}
 <!-- Single Department Start Here -->
 <section class="single-department-wrap-layout1 bg-light-primary100">
     <div class="container">
@@ -20,7 +20,7 @@
             <div class="sidebar-widget-area sidebar-break-md col-xl-3 col-lg-4 col-12 no-equal-item">
                 {% include 'departament/departament_detail/includes/category_area.html' %}
                 {% include 'departament/departament_detail/includes/schedule_area.html' %}
-                {% include 'general_includes/side_appointment/side_appointment.html' %}
+                {% include 'general_includes/side_appointment/side_appointment.html' with selected_departament=departament.slug %}
             </div>
         </div>
     </div>

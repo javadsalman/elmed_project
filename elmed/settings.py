@@ -76,7 +76,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
             'libraries': {
-                'url_handler': 'shared.template_tags.url_handler'
+                'url_handler': 'shared.template_tags.url_handler',
+                'adress_handler': 'shared.template_tags.adress_handler',
             }
         },
     },
