@@ -21,16 +21,22 @@ class AppointmentAdmin(admin.ModelAdmin):
     actions = [make_seen, make_unseen]
     
     def doctor_link(self, obj):
-        return format_html(
-            '<a href="{}" target="_blank">{}</a>', 
-            obj.doctor.get_absolute_url(), 
-            f'Dr. {obj.doctor.name.split()[0]}')
+        if obj.doctor:
+            return format_html(
+                '<a href="{}" target="_blank">{}</a>', 
+                obj.doctor.get_absolute_url(), 
+                f'Dr. {obj.doctor.name.split()[0]}')
+        else:
+            return None
     doctor_link.short_description = 'Həkim'
         
     def departament_link(self, obj):
-        return format_html(
-            '<a href="{}">{}</a>', 
-            obj.departament.get_absolute_url(), 
-            obj.departament.name)
+        if obj.departament:
+            return format_html(
+                '<a href="{}">{}</a>', 
+                obj.departament.get_absolute_url(), 
+                obj.departament.name)
+        else:
+            return None
     departament_link.short_description = 'Şöbə'
     

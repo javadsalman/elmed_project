@@ -98,7 +98,7 @@
                                 </ul>
                             {% endif %}
                         {% endwith %}
-                        <a href="single-doctor.html" class="item-btn">MAKE AN APPOINTMENT</a>
+                        <a href="{% url 'appointment' %}?departament={{ doctor.departament.slug }}&doctor={{ doctor.slug }}" class="item-btn">MAKE AN APPOINTMENT</a>
                     </div>
                 </div>
             {% endfor %}

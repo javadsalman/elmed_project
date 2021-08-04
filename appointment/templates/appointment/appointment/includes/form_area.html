@@ -10,7 +10,7 @@
                     <p>Efficiently myocardinate market-driven innovation via open-source alignments.
                         Dramatically engage
                         porescently.</p>
-                    <form action="{% url 'appointment' %}" method="post"}>
+                    <form id="appointment-form" action="{% url 'appointment' %}" method="post"}>
                         {% csrf_token %}
                         <div class="row gutters-15">
                             <div class="col-12 form-group">
@@ -74,7 +74,12 @@
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="col-12 form-group text-center">
-                                <button type="submit" class="item-btn">Make an Appointment</button>
+                                <button 
+                                class="item-btn g-recaptcha" 
+                                data-sitekey="6LcNJ9sbAAAAAGalq-RFjtKWAEMDaOQp2AnCCU5T"
+                                data-callback="onSubmit" 
+                                data-action="submit"
+                                >Make an Appointment</button>
                             </div>
                         </div>
                     </form>
