@@ -28,6 +28,8 @@ urlpatterns = [
     path('%s/' % getenv('ADMIN_URL'), admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+api_url = '%s/'%getenv('API_URL')
+
 urlpatterns += i18n_patterns(
     path('', home, name='home'),
     path('haqqimizda/', AboutView.as_view(), name='about'),
@@ -37,3 +39,7 @@ urlpatterns += i18n_patterns(
     path('bloq/', include('blog.urls')),
     path('qeydiyyat/', include('appointment.urls')),
 )
+
+urlpatterns += [
+    path(api_url, include('appointment.api.urls'))
+]
