@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from appointment.models import Appointment
+from doctor.models import Doctor
+from departament.models import Departament
 
 class AppointmentSerializer(serializers.ModelSerializer):
     created = serializers.SerializerMethodField()
@@ -24,4 +26,11 @@ class AppointmentSerializer(serializers.ModelSerializer):
             return obj.departament.name
         else:
             return None
+        
+
+class SearchSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
+    name = serializers.CharField(max_length = 50)
+    
+        
     

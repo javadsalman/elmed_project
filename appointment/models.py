@@ -17,7 +17,7 @@ class Appointment(models.Model):
     created = models.DateTimeField(auto_now_add=True, verbose_name="Yaradılma Tarixi")
     
     class Meta:
-        ordering = ['-updated']
+        ordering = ['-created']
         verbose_name = 'Randevu'
         verbose_name_plural = 'Randevular'
 
