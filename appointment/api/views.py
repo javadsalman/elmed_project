@@ -81,17 +81,21 @@ def search(request):
 def edit_list(request):
     edit_type = request.data['editType']
     id_list = request.data['idList']
-    appointments = Appointment.objects.filter(id__in=id_list)
-    # edit_type ve id_list typelerini deqiqlesdiremk ucun bura condition elave olunmalidi!!!
+    print('\n\n\n',)
+    print(edit_type)
+    print(type(id_list), id_list)
+    print('\n\n\n')
+    if isinstance(id_list, list):
+        appointments = Appointment.objects.filter(id__in=id_list)
+    else:
+        return Response(status=status.HTTP_400_BAD_REQUEST)
+
     if edit_type == 'seen':
         appointments.update(seen=True)
     elif edit_type == 'unseen':
         appointments.update(seen=False)
-    if edit_type == 'delete':
+    elif edit_type == 'delete':
         appointments.delete()
-        
-    # print('\n\n\n',)
-    # print(edit_type)
-    # print(type(id_list), id_list)
-    # print('\n\n\n')
+    else:
+        return Response(status=status.HTTP_400_BAD_REQUEST)
     return Response(status=status.HTTP_200_OK)
