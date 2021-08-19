@@ -8,7 +8,7 @@ from rest_framework import generics, decorators, status
 from django.contrib.auth import logout, authenticate
 from rest_framework.authtoken.models import Token
 from django_filters.rest_framework import DjangoFilterBackend
-
+from rest_framework.throttling import UserRateThrottle, AnonRateThrottle
 
 class AppointmentList(generics.ListAPIView):
     serializer_class = AppointmentSerializer
@@ -48,6 +48,7 @@ def logout_view(request):
 
 
 @decorators.api_view(['POST'])
+@decorators.throttle_classes([UserRateThrottle, AnonRateThrottle])
 def login_view(request):
     username = request.data['username']
     password = request.data['password']
@@ -59,11 +60,11 @@ def login_view(request):
         return Response(status=status.HTTP_400_BAD_REQUEST)
     
 
-@decorators.api_view(['POST'])
+@decorators.api_view(['GET'])
 @decorators.permission_classes([IsReceptionStaff])
 def search(request):
-    search_type = request.data['searchType']
-    search_value = request.data['searchValue']
+    search_type = request.query_params['searchType']
+    search_value = request.query_params['searchValue']
     if search_type == 'name':
         queryset = Appointment.objects.filter(name__icontains=search_value)
     elif search_type == 'doctor':
@@ -81,10 +82,6 @@ def search(request):
 def edit_list(request):
     edit_type = request.data['editType']
     id_list = request.data['idList']
-    print('\n\n\n',)
-    print(edit_type)
-    print(type(id_list), id_list)
-    print('\n\n\n')
     if isinstance(id_list, list):
         appointments = Appointment.objects.filter(id__in=id_list)
     else:
