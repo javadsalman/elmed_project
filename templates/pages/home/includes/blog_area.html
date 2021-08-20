@@ -11,7 +11,7 @@
                     <div class="blog-box-layout5">
                         <div class="item-img">
                             <a href="{{ article.get_absolute_url }}">
-                                <img src="{{ article.main_image.url }}" class="img-fluid" alt="blog" style="width: 350px; height: 195px; object-fit: cover;">
+                                <img src="{{ article.main_image.url }}" class="img-fluid" alt="blog" style="width: 100%; height: 250px; object-fit: cover;">
                             </a>
                             <div class="post-date">{{ article.updated|date:"j" }}
                                 <span>{{ article.updated|date:"F" }}</span>
@@ -26,6 +26,8 @@
                                 <ul>
                                     {% if article.doctor %}
                                         <li>Həkim: <a href="{{ article.doctor.get_absolute_url }}">{{ article.doctor.name }}</a></li>
+                                    {% else %}
+                                        <li>Müəllif: <span class="text-secondary">Sistem</span></li>
                                     {% endif %}
                                 </ul>
                             </div>

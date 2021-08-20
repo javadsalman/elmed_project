@@ -23,6 +23,8 @@
                             <ul>
                                 {% if article.doctor %}
                                     <li>Həkim: <a href="{{ article.doctor.get_absolute_url }}">{{ article.doctor.name }}</a></li>
+                                {% else %}
+                                    <li>Müəllif: Sistem</li>
                                 {% endif %}
                             </ul>
                         </div>

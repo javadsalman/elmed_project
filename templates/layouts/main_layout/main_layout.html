@@ -2,11 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% block meta %}
-    {% endblock meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="elmed klinikası, klinika, həkim, müalicə, diaqnoz, xəstəxana, elmed, xəstəlik, cərrah">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block metas %}
+    {% endblock metas %}
     {% block title %}
     {% endblock title %}
 
@@ -17,6 +18,15 @@
     <link rel="stylesheet" href="{% static 'layouts/main_layout/css/custom_main_layout.css' %}">
     <!-- Modernizr Js -->
     <script src="{% static 'general/base/js/main.js' %}"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    {% comment %} <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y932SVCY23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-Y932SVCY23');
+    </script> {% endcomment %}
 
 </head>
 <body>

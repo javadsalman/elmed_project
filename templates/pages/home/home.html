@@ -1,8 +1,28 @@
 {% extends 'layouts/main_layout/main_layout.html' %}
 
+{% block metas %}
+    <meta name="title" content="Elmed Klinikası - Birlikdə daha sağlam həyat quraq!">
+    <meta name="description" content="Klinikamızda tətbiq olunan yüksək tibbi texnologiyalar vasitəsilə pasiyentlərin sağlamlığını tam şəkildə qoruyaraq, cəmiyyətimizə ən yaxşı xidməti göstərməyə çalışırıq.">
+    <meta name="theme-color" content="#fff">
+
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta property="og:url"           content="https://www.elmed.az"/>
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Elmed Klinikası - Birlikdə daha sağlam həyat quraq!"/>
+	<meta property="og:description"   content="Klinikamızda tətbiq olunan yüksək tibbi texnologiyalar vasitəsilə pasiyentlərin sağlamlığını tam şəkildə qoruyaraq, cəmiyyətimizə ən yaxşı xidməti göstərməyə çalışırıq."/>
+	<meta property="og:image"         content="BURA LOGO LINKI GELECEK" />
+{% endblock metas %}
+
+
+{% block title %}
+    <title>Əsas Səhifə - Elmed Klinikası</title>
+{% endblock title %}
+
+
 {% block links %}
     {% include 'pages/home/includes/links.html' %}
 {% endblock links %}
+
 
 {% block body %}
     {% include 'pages/home/includes/slider_area.html' %}
@@ -11,8 +31,9 @@
     {% include 'pages/home/includes/departaments_area.html' %}
     {% include 'pages/home/includes/doctors_area.html' %}
     {% include 'pages/home/includes/blog_area.html' %}
-    {% comment %} {% include 'pages/home/includes/featured_area.html' %} {% endcomment %}
+    {% include 'pages/home/includes/featured_area.html' %}
 {% endblock body %}
+
 
 {% block scripts %}
     {% include 'pages/home/includes/scripts.html' %}

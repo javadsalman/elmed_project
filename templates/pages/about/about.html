@@ -1,6 +1,18 @@
 {% extends 'layouts/main_layout/main_layout.html' %}
 {% load static %}
 
+
+{% block metas %}
+    <meta name="title" content="Elmed Klinikası - Klinikamız haqqında məlumat əldə edin">
+    <meta name="description" content="Klinikamızda tətbiq olunan yüksək tibbi texnologiyalar vasitəsilə pasiyentlərin sağlamlığını tam şəkildə qoruyaraq, cəmiyyətimizə ən yaxşı xidməti göstərməyə çalışırıq.">
+{% endblock metas %}
+
+
+{% block title %}
+    <title>Haqqımızda - Elmed Klinikası</title>
+{% endblock title %}
+
+
 {% block links %}
     {% include 'pages/about/includes/links.html' %}
     <link rel="stylesheet" href="{% static 'pages/about/css/custom_about.css' %}">

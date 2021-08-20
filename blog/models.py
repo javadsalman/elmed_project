@@ -9,7 +9,7 @@ from imagekit.models import ProcessedImageField, ImageSpecField
 class Category(models.Model):
     name = models.CharField(max_length=60, verbose_name="Ad")
     slug = models.SlugField(max_length=100)
-    cover = ProcessedImageField(upload_to='blog/category/cover/', options={'quality': 180}, verbose_name="Qapaq Şəkli")
+    cover = ProcessedImageField(upload_to='blog/category/cover/', options={'quality': 180}, verbose_name="Qapaq Şəkli", null=True, blank=True)
     updated = models.DateTimeField(auto_now=True, verbose_name="Son Dəyişdirilmə Tarixi")
     created = models.DateTimeField(auto_now_add=True, verbose_name="Yaradılma Tarixi")
     

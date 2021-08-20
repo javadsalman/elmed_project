@@ -2,7 +2,16 @@
 {% load adress_handler %}
 
 <!-- Inne Page Banner Area Start Here -->
-<section class="inner-page-banner bg-common inner-page-top-margin" data-bg-image="{% static 'general/base/img/figure/figure2.jpg' %}">
+<section
+    class="inner-page-banner bg-common inner-page-top-margin"
+    {% if cover_attribute %}
+        data-bg-image="{{ cover_attribute.url }}"
+    {% elif default_url %}
+        data-bg-image="{{ default_url }}"
+    {% else %}
+        data-bg-image="{% static 'general/base/img/figure/figure2.jpg' %}"
+    {% endif %}
+    >
     <div class="container">
         <div class="row">
             <div class="col-12">

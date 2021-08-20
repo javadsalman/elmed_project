@@ -26,31 +26,26 @@
             data-r-large-dots="false" data-r-extra-large="4" data-r-extra-large-nav="false"
             data-r-extra-large-dots="false">
             {% for doctor in doctors %}
-                <div class="team-box-layout2">
-                    <div class="item-img">
-                        <img src="{{ doctor.image.url }}" alt="Team1" class="img-fluid rounded-circle" style="width: 230px; height: 230px; object-fit: cover; object-position: top;">
-                        <ul class="item-icon">
-                            <li>
-                                <a href="single-doctor.html">
-                                    <i class="fas fa-plus"></i>
-                                </a>
-                            </li>
-                        </ul>
+                <div class="team-box-layout2" style="min-height: 614px;">
+                    <div class="mb-3">
+                        <a href="{{ doctor.get_absolute_url }}">
+                            <img src="{{ doctor.image.url }}" alt="Team1" class="img-fluid rounded-circle mx-auto" style="width: 230px; height: 230px; object-fit: cover; object-position: top;">
+                        </a>
                     </div>
                     <div class="item-content">
                         {% if doctor.name|length < 17 %}
                             <h3 class="item-title">
-                                <a href="single-doctor.html">Dr. {{ doctor.name }}</a>
+                                <a href="{{ doctor.get_absolute_url }}">Dr. {{ doctor.name }}</a>
                             </h3>
                         {% else %}
                             <h4 class="item-title" style="height: 33px;">
-                                <a href="single-doctor.html">Dr. {{ doctor.name }}</a>
+                                <a href="{{ doctor.get_absolute_url }}">Dr. {{ doctor.name }}</a>
                             </h4>
                         {% endif %}
                         
                         <p>{{ doctor.profession }}</p>
                     </div>
-                    <div class="item-schedule">
+                    <div class="item-schedule" style="min-height: 210px;">
                         {% with doctor.schedule as schedule %}
                             {% if schedule.show_schedule %}
                                 <ul>
@@ -98,6 +93,8 @@
                                 </ul>
                             {% endif %}
                         {% endwith %}
+                    </div>
+                    <div class="item-schedule">
                         <a href="{% url 'appointment' %}?departament={{ doctor.departament.slug }}&doctor={{ doctor.slug }}" class="item-btn">MAKE AN APPOINTMENT</a>
                     </div>
                 </div>

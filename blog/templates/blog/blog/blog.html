@@ -1,6 +1,16 @@
 {% extends 'layouts/main_layout/main_layout.html' %}
 
 
+{% block metas %}
+    <meta name="title" content="Elmed Klinikası - Ən yeni tibbi məqalələr və xəbərlər">
+    <meta name="description" content="Klinikamızda tətbiq olunan yüksək tibbi texnologiyalar vasitəsilə pasiyentlərin sağlamlığını tam şəkildə qoruyaraq, cəmiyyətimizə ən yaxşı xidməti göstərməyə çalışırıq.">
+{% endblock metas %}
+
+{% block title %}
+    <title>Bloq - Elmed Klinikası</title>
+{% endblock title %}
+
+
 {% block links %}
     {% include 'blog/blog/includes/links.html' %}
 {% endblock links %}

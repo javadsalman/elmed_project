@@ -1,5 +1,17 @@
 {% extends 'layouts/main_layout/main_layout.html' %}
 
+
+{% block metas %}
+    <meta name="title" content="Elmed Klinikası - Peşəkarlaşmış şöbələrimizlə tanış olun!">
+    <meta name="description" content="Klinikamızda tətbiq olunan yüksək tibbi texnologiyalar vasitəsilə pasiyentlərin sağlamlığını tam şəkildə qoruyaraq, cəmiyyətimizə ən yaxşı xidməti göstərməyə çalışırıq.">
+{% endblock metas %}
+
+
+{% block title %}
+    <title>Şöbələr - Elmed Klinikası</title>
+{% endblock title %}
+
+
 {% block links %}
     {% include 'departament/departament_list/includes/links.html' %}
 {% endblock links %}
@@ -13,7 +25,7 @@
         <div class="container">
             <div class="call-to-action-box-layout2">
                 <h2>We Provide the highest level of satisfaction<span> care &amp; services to our patients.</span></h2>
-                <a href="#" class="item-btn">Make an Appointment</a>
+                <a href="{% url 'appointment' %}" class="item-btn">Make an Appointment</a>
             </div>
         </div>
     </section>

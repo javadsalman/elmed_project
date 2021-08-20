@@ -2,6 +2,27 @@
 
 {% load static %}
 
+
+{% block metas %}
+    <meta name="title" content="Elmed Klinikası - {{ departament.name }} şöbəsi haqqında məlumat">
+    <meta name="description" content="Klinikamızda tətbiq olunan yüksək tibbi texnologiyalar vasitəsilə pasiyentlərin sağlamlığını tam şəkildə qoruyaraq, cəmiyyətimizə ən yaxşı xidməti göstərməyə çalışırıq.">
+    <meta name="theme-color" content="#fff">
+
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta property="og:url"           content="https://www.elmed.az"/>
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Elmed Klinikası - {{ departament.name }} şöbəsi haqqında məlumat"/>
+	<meta property="og:description"   content="Klinikamızda tətbiq olunan yüksək tibbi texnologiyalar vasitəsilə pasiyentlərin sağlamlığını tam şəkildə qoruyaraq, cəmiyyətimizə ən yaxşı xidməti göstərməyə çalışırıq."/>
+	<meta property="og:image"         content="{{ doctor.image.url }}" />
+{% endblock metas %}
+
+
+{% block title %}
+    <title>{{ doctor.name }} {{ doctor.profession }} - Elmed Klinikası</title>
+{% endblock title %}
+
+
+
 {% block links %}
     {% include 'departament/departament_detail/includes/links.html' %}
 {% endblock links %}

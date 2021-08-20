@@ -12,11 +12,19 @@
         <div class="post-actions-wrapper">
             <ul>
                 <li>
-                    <a href="#">
-                    <i class="flaticon-people"></i>Müəllif: <span>Dr. {{ article.doctor.name }}</span></a>
+                    
+                    {% if article.doctor %}
+                        <a href="{{ article.doctor.get_absolute_url }}">
+                            <i class="flaticon-people"></i>Müəllif: <span>Dr. {{ article.doctor.name }}</span>
+                        </a>
+                    {% else %}
+                        <a href="{{ article.category.get_absolute_url }}">
+                            <i class="flaticon-people"></i>Müəllif: <span> Sistem </span>
+                        </a>
+                    {% endif %}
                 </li>
                 <li>
-                    <a href="#"><i class="flaticon-tag"></i>Kateqoriya: <span>{{ article.category.name }}</span></a>
+                    <a href="{{ article.category.get_absolute_url }}"><i class="flaticon-tag"></i>Kateqoriya: <span>{{ article.category.name }}</span></a>
                 </li>
             </ul>
         </div>

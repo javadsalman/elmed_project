@@ -2,6 +2,27 @@
 
 {% load static %}
 
+
+{% block metas %}
+    <meta name="title" content="Elmed Klinikası - Həkim {{ doctor.profession }} {{ doctor.name }}">
+    <meta name="description" content="Həkim {{doctor.profession }} {{ doctor.name }} kimdir. Təhsili, iş saatları, əlaqə məlumatları. Haqqında oxuyun">
+    <meta name="theme-color" content="#fff">
+
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta property="og:url"           content="{{ request.build_absolute_uri }}"/>
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Elmed Klinikası - {{ doctor.profession }} {{ doctor.name }}"/>
+	<meta property="og:description"   content="Həkim {{doctor.profession }} {{ doctor.name }} kimdir. Təhsili, iş saatları, əlaqə məlumatları. Haqqında oxuyun"/>
+	<meta property="og:image"         content="https://www.elmed.az{{ doctor.image.url }}" />
+{% endblock metas %}
+
+
+{% block title %}
+    <title>{{ doctor.name }} {{ doctor.profession }} - Elmed Klinikası</title>
+{% endblock title %}
+
+
+
 {% block links %}
     {% include 'doctor/doctor_detail/includes/links.html' %}
 {% endblock links %}

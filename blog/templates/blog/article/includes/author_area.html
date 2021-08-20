@@ -2,9 +2,13 @@
 
 <div class="blog-author">
     <div class="media media-none--xs">
-        <img src="{{ article.doctor.image.url }}" style="width: 130px; height: 130px; object-fit: cover; object-postion: top;" alt="Blog Author" class="rounded-circle media-img-auto">
+        <a href="{{ article.doctor.get_absolute_url }}">
+            <img src="{{ article.doctor.image.url }}" style="width: 130px; height: 130px; object-fit: cover; object-postion: top;" alt="Blog Author" class="rounded-circle media-img-auto">
+        </a>
         <div class="media-body">
-            <h4 class="author-title">{{ article.doctor.name}}</h4>
+            <a href="{{ article.doctor.get_absolute_url }}">
+                <h4 class="author-title">{{ article.doctor.name}}</h4>
+            </a>
             <p>{{ article.doctor.profession }}</p>
             <ul class="author-social">
                 <li>

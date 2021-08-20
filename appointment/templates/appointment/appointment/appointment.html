@@ -1,5 +1,16 @@
 {% extends 'layouts/main_layout/main_layout.html' %}
 
+
+{% block metas %}
+    <meta name="title" content="Elmed Klinikası - Oturduğunuz yerdən onlayn randevu!">
+    <meta name="description" content="Klinikamızda tətbiq olunan yüksək tibbi texnologiyalar vasitəsilə pasiyentlərin sağlamlığını tam şəkildə qoruyaraq, cəmiyyətimizə ən yaxşı xidməti göstərməyə çalışırıq.">
+{% endblock metas %}
+
+{% block title %}
+    <title>Randevu - Elmed Klinikası</title>
+{% endblock title %}
+
+
 {% block links %}
     {% include 'appointment/appointment/includes/links.html' %}
 {% endblock links %}
