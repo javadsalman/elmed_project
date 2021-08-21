@@ -1,6 +1,25 @@
 {% extends 'layouts/main_layout/main_layout.html' %}
 
 
+{% block metas %}
+    <meta name="title" content="{{ article.title }} - Elment Klinikası Bloq">
+    <meta name="description" content="{{ article.description }}">
+    <meta name="theme-color" content="#fff">
+
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta property="og:url"           content="{{ request.build_absolute_uri }}"/>
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="{{ article.title }} - Elment Klinikası Bloq"/>
+	<meta property="og:description"   content="{{ article.description }}"/>
+	<meta property="og:image"         content="{{request.scheme}}://{{request.META.HTTP_HOST}}{{ article.main_image.url }}" />
+{% endblock metas %}
+
+
+{% block title %}
+    <title>{{ article.title }} - Elmed Klinikası Bloq</title>
+{% endblock title %}
+
+
 {% block links %}
     {% include 'blog/article/includes/links.html' %}
 {% endblock links %}
@@ -15,7 +34,10 @@
                 <div class="blog-detail-box">
                     {% include 'blog/article/includes/content_area.html' %}
                     {% include 'blog/article/includes/share_area.html' %}
-                    {% include 'blog/article/includes/author_area.html' %}
+                    {% if article.doctor %}
+                        {% include 'blog/article/includes/author_area.html' %}
+                    {% endif %}
+                        
                 </div>
             </div>
             <div class="sidebar-widget-area sidebar-break-md col-xl-3 col-lg-4 col-12">

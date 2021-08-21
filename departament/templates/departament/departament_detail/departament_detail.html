@@ -9,11 +9,11 @@
     <meta name="theme-color" content="#fff">
 
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	<meta property="og:url"           content="https://www.elmed.az"/>
+	<meta property="og:url"           content="{{ request.build_absolute_uri }}"/>
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="Elmed Klinikası - {{ departament.name }} şöbəsi haqqında məlumat"/>
 	<meta property="og:description"   content="Klinikamızda tətbiq olunan yüksək tibbi texnologiyalar vasitəsilə pasiyentlərin sağlamlığını tam şəkildə qoruyaraq, cəmiyyətimizə ən yaxşı xidməti göstərməyə çalışırıq."/>
-	<meta property="og:image"         content="{{ doctor.image.url }}" />
+	<meta property="og:image"         content="{{request.scheme}}://{{request.META.HTTP_HOST}}{{ doctor.image.url }}" />
 {% endblock metas %}
 
 
@@ -41,7 +41,6 @@
             <div class="sidebar-widget-area sidebar-break-md col-xl-3 col-lg-4 col-12 no-equal-item">
                 {% include 'departament/departament_detail/includes/category_area.html' %}
                 {% include 'departament/departament_detail/includes/schedule_area.html' %}
-                {% comment %} {% include 'general_includes/side_appointment/side_appointment.html' with selected_departament=departament.slug %} {% endcomment %}
             </div>
         </div>
     </div>

@@ -11,21 +11,21 @@
             </a>
             <p>{{ article.doctor.profession }}</p>
             <ul class="author-social">
-                <li>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-skype"></i></a>
-                </li>
+                {% if article.doctor.facebook %}
+                    <li><a href="{{ article.doctor.facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+                {% endif %}
+
+                {% if article.doctor.youtube %}
+                    <li><a href="{{ article.doctor.youtube }}"><i class="fab fa-youtube"></i></a></li>
+                {% endif %}
+                    
+                {% if article.doctor.instagram %}
+                    <li><a href="{{ article.doctor.instagram }}"><i class="fab fa-instagram"></i></a></li>
+                {% endif %}
+
+                {% if article.doctor.whatsapp %}
+                    <li><a href="{{ article.doctor.whatsapp }}"><i class="fab fa-whatsapp"></i></a></li>
+                {% endif %}
             </ul>
         </div>
     </div>

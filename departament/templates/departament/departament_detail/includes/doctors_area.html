@@ -3,8 +3,10 @@
         <div class="item-specialist">
             <div class="media media-none--xs">
                 <div class="item-img">
-                    <img src="{{ doctor.image.url }}" style="width: 100px; height: 163px; object-fit: cover; object-position: top;" alt="Generic placeholder image"
-                        class="img-fluid media-img-auto">
+                    <a href="{{ doctor.get_absolute_url }}">
+                        <img src="{{ doctor.image.url }}" style="width: 100px; height: 163px; object-fit: cover; object-position: top;" alt="Generic placeholder image"
+                            class="img-fluid media-img-auto">
+                    </a>
                 </div>
                 <div class="media-body mt-5">
                     <h4 class="item-title"><a href="{{ doctor.get_absolute_url }}">{{ doctor.name }}</a></h4>

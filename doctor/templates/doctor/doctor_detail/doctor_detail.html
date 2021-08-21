@@ -13,7 +13,7 @@
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="Elmed Klinikası - {{ doctor.profession }} {{ doctor.name }}"/>
 	<meta property="og:description"   content="Həkim {{doctor.profession }} {{ doctor.name }} kimdir. Təhsili, iş saatları, əlaqə məlumatları. Haqqında oxuyun"/>
-	<meta property="og:image"         content="https://www.elmed.az{{ doctor.image.url }}" />
+	<meta property="og:image"         content="{{request.scheme}}://{{request.META.HTTP_HOST}}{{ doctor.image.url }}" />
 {% endblock metas %}
 
 
@@ -37,7 +37,9 @@
                 <div class="order-xl-2 order-lg-2 col-xl-9 col-lg-8 col-md-12 col-12">
                     <div class="team-detail-box-layout1">
                         {% include 'doctor/doctor_detail/includes/article_area.html' %}
-                        {% include 'doctor/doctor_detail/includes/education_area.html' %}
+                        {% if doctor.doctoreducation_set.count %}
+                            {% include 'doctor/doctor_detail/includes/education_area.html' %}
+                        {% endif %}
                         {% include 'doctor/doctor_detail/includes/schedule_area.html' %}
                     </div>
                 </div>
