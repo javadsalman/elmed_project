@@ -1,0 +1,51 @@
+{% extends 'layouts/main_layout/main_layout.html' %}
+
+{% block links %}
+    {% include 'campaign/campaign_list/includes/links.html' %}
+{% endblock links %}
+
+
+{% block body %}
+    {% include 'general_includes/banner/banner.html' with adress_string="Baş Səhifə" name="Kampaniyalar"%}
+    <!-- Shop Area Start Here -->
+        <section class="shop-wrap-layout1 bg-light-primary100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 col-lg-8 col-12">
+                        <div class="row">
+                            {% include 'campaign/campaign_list/includes/campaigns_area.html' %}
+                        </div>
+                        <ul class="pagination-layout2 margin-t-30">
+                            <li>
+                                <a href="#">Previous</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">1</a>
+                            </li>
+                            <li>
+                                <a href="#">2</a>
+                            </li>
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+                            <li>
+                                <a href="#">Next</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-widget-area sidebar-break-md col-xl-3 col-lg-4 col-12">
+                        {% include 'campaign/campaign_list/includes/search_area.html' %}
+                        {% include 'campaign/campaign_list/includes/category_area.html' %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Shop Area End Here -->
+
+{% endblock body %}
+
+
+
+{% block scripts %}
+    {% include 'campaign/campaign_list/includes/scripts.html' %}
+{% endblock scripts %}

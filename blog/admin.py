@@ -52,6 +52,7 @@ class ArticleAdmin(admin.ModelAdmin):
     actions = [show_article_action, hide_article_action]
     
     list_display = ['title', 'doctor_link', 'category_link', 'article_link', 'show', 'updated']
+    list_filter = ['category', 'updated']
     
     def article_link(self, obj):
         return format_html('<a href="{}" target="_blank"><b>GET</b></a>', obj.get_absolute_url())

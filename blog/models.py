@@ -43,7 +43,7 @@ class Article(models.Model):
     title = models.CharField(max_length=60, null=False, blank=False, verbose_name="Başlıq")
     description = models.CharField(max_length=200, null=True, blank=True)
     main_image = ProcessedImageField(upload_to='article/main_images/', verbose_name="Əsas Şəkil", options={'quality': 180})
-    thumbnail = ImageSpecField(source='main_image', format='JPEG', options={'quality': 60})
+    thumbnail = ImageSpecField(source='main_image', format='JPEG', options={'quality': 80})
     slug = models.SlugField(max_length=100)
     content = RichTextField(verbose_name="Kontent")
     show = models.BooleanField(default=True, verbose_name='Bloqda görünsünmü?')

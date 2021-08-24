@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'doctor',
     'blog',
     'appointment',
+    'campaign',
     # EXTERNAL APPS
     'ckeditor',
     'django_filters',

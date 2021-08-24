@@ -1,0 +1,38 @@
+{% extends 'layouts/main_layout/main_layout.html' %}
+
+{% block links %}
+    {% include 'campaign/campaign_detail/includes/links.html' %}
+{% endblock links %}
+
+
+{% block body %}
+    {% include 'general_includes/banner/banner.html' with adress_string="Baş Səhifə" name="Kampaniyalar"%}
+    <!-- Shop Details Start Here -->
+    <section class="single-product-wrap bg-light-primary100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 col-lg-8 col-12 margin-b-30r">
+                    <div class="single-product-box mb-0">
+                        <div class="row">
+                            {% include 'campaign/campaign_detail/includes/image_area.html' %}
+                            {% include 'campaign/campaign_detail/includes/detail_area.html' %}
+                        </div>
+                    </div>
+                    <div class="single-product-tab">
+                        {% include 'campaign/campaign_detail/includes/about_area.html' %}
+                    </div>
+                </div>
+                <div class="sidebar-widget-area sidebar-break-md col-xl-3 col-lg-4 col-12">
+                    {% include 'campaign/campaign_detail/includes/others_area.html' %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shop Details End Here -->
+{% endblock body %}
+
+
+
+{% block scripts %}
+    {% include 'campaign/campaign_detail/includes/scripts.html' %}
+{% endblock scripts %}

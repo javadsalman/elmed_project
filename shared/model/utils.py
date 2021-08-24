@@ -2,7 +2,7 @@ from django.utils.text import slugify
 from django.utils.html import format_html
 
 def get_slug(slug):
-    return slugify(slug.lower().translate(str.maketrans('üöğəçş', 'uogecs')))
+    return slugify(slug.lower().translate(str.maketrans('üöğəçşı', 'uogecsi')))
 
 from django.utils.safestring import mark_safe
 

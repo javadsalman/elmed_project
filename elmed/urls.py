@@ -38,6 +38,7 @@ urlpatterns += i18n_patterns(
     path('hekimler/', include('doctor.urls')),
     path('bloq/', include('blog.urls')),
     path('qeydiyyat/', include('appointment.urls')),
+    path('kampaniyalar/', include('campaign.urls')),
 )
 
 urlpatterns += [

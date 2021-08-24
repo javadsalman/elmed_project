@@ -1,5 +1,5 @@
 from django.urls import path
-from blog.views import article, ArticleList, ArticleDeatil
+from blog.views import ArticleList, ArticleDeatil
 
 urlpatterns = [
     path('', ArticleList.as_view(), name='blog'),

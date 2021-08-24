@@ -1308,6 +1308,7 @@ ul {
 .cart-area-dark:hover .cart-items {
   opacity: 1;
   visibility: visible;
+  transform: perspective(400) rotate3d(0, 0, 0, 0);
   -webkit-transform: perspective(400) rotate3d(0, 0, 0, 0);
 }
 .cart-area-light {
@@ -1354,6 +1355,7 @@ ul {
 .cart-area-light:hover .cart-items {
   opacity: 1;
   visibility: visible;
+  transform: perspective(400) rotate3d(0, 0, 0, 0);
   -webkit-transform: perspective(400) rotate3d(0, 0, 0, 0);
 }
 .cart-items {
@@ -1367,6 +1369,7 @@ ul {
   right: 0;
   min-width: 385px;
   color: #111111;
+  transform: perspective(400) rotate3d(1, 0, 0, -15deg);
   -webkit-transform: perspective(400) rotate3d(1, 0, 0, -15deg);
   -webkit-transform-origin: 50% 0;
   -moz-transform-origin: 50% 0;
@@ -5761,7 +5764,7 @@ div ~ :last-child .call-to-action-box-layout5 {
 .shop-box-layout1 .item-img:after {
   position: absolute;
   content: "";
-  background-color: rgba(57, 108, 240, 0.9);
+  background-color: rgba(57, 108, 240, 0.3);
   height: 100%;
   width: 100%;
   top: 0;
@@ -8118,7 +8121,7 @@ div ~ :last-child .call-to-action-box-layout5 {
   border-top: 1px solid #f2f2f2;
   border-bottom: 1px solid #f2f2f2;
   border-left: 1px solid #f2f2f2;
-  display: inline-block;
+  /* display: inline-block; */
   float: left;
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
