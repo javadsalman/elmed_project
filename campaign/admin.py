@@ -4,7 +4,7 @@ from campaign.models import Campaign
 
 # Register your models here.
 
-@admin.action(description='Seçilənlər Saytda Görünməsin')
+@admin.action(description='Seçilənlər Saytda Görünsün')
 def show_campaign_action(modeladmin, request, queryset):
     queryset.update(show=True)
     

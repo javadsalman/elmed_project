@@ -874,7 +874,7 @@ ul {
   display: flex;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  justify-content: flex-end;
+  justify-content: center;
 }
 .header-menu-layout3 .template-main-menu nav > ul > li > a {
   padding: 40px 15px 39px;

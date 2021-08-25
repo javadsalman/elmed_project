@@ -18,7 +18,7 @@ class Campaign(models.Model):
     first_image = ProcessedImageField(upload_to='campaign/first/', options={'quality': 180}, verbose_name='Əsas Şəkil')
     second_image = ProcessedImageField(upload_to='campaign/second/', options={'quality': 180}, null=True, blank=True, verbose_name='İkinci Şəkil')
     third_image = ProcessedImageField(upload_to='campaign/third/', options={'quality': 180}, null=True, blank=True, verbose_name='Üçüncü Şəkil')
-    thumbnail = ImageSpecField(source=first_image, format='JPEG', options={'quality': 80})
+    thumbnail = ImageSpecField(source='first_image', format='JPEG', options={'quality': 80})
     show = models.BooleanField(default=True, verbose_name='Saytda Görünsün')
     about = RichTextField(verbose_name='Ətraflı')
     updated = models.DateTimeField(auto_now=True, verbose_name='Son Dəyişdirilmə Tarixi')
@@ -27,12 +27,20 @@ class Campaign(models.Model):
     def save(self, *args, **kwargs):
         self.slug = get_slug(self.title)
         return super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title
     
     def get_absolute_url(self):
         return reverse("campaign-detail", kwargs={"pk": self.pk, "slug": self.slug})
     
-    def __str__(self):
-        return self.title
+    def get_other_campaigns(self):
+        general_set = Campaign.objects.filter(show=True, available=True)
+        same_departaments = general_set.exclude(pk=self.pk)[:5]
+        if (count := same_departaments.count()) < 5:
+            other_departaments = general_set.exclude(departament=self.departament)[:5-count]
+            same_departaments.union(other_departaments)
+        return same_departaments
 
     class Meta:
         ordering = ['-updated']

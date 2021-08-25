@@ -17,7 +17,9 @@ class ArticleList(FilterView):
     context_object_name = 'articles'
     paginate_by = 6
     filterset_class = BlogFilter
-    model = Article
+    
+    def get_queryset(self):
+        return Article.objects.filter(show=True)
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

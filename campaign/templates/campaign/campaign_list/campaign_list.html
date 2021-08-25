@@ -12,26 +12,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xl-9 col-lg-8 col-12">
-                        <div class="row">
-                            {% include 'campaign/campaign_list/includes/campaigns_area.html' %}
-                        </div>
-                        <ul class="pagination-layout2 margin-t-30">
-                            <li>
-                                <a href="#">Previous</a>
-                            </li>
-                            <li class="active">
-                                <a href="#">1</a>
-                            </li>
-                            <li>
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">Next</a>
-                            </li>
-                        </ul>
+                        {% include 'campaign/campaign_list/includes/campaigns_area.html' %}
+                        {% include 'general_includes/pagination/pagination.html' with page_obj=page_obj page_list=page_list%}
                     </div>
                     <div class="sidebar-widget-area sidebar-break-md col-xl-3 col-lg-4 col-12">
                         {% include 'campaign/campaign_list/includes/search_area.html' %}

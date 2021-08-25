@@ -3,7 +3,26 @@
 <div class="widget widget-top-rated">
     <h3 class="section-title title-bar-primary">Related Products</h3>
     <ul>
-        <li class="media">
+        {% for other in campaign.get_other_campaigns %}
+            <li class="media">
+                <div class="top-rated-img">
+                    <a href="{{ other.get_absolute_url }}">
+                        <img src="{{ other.thumbnail.url }}" class="img-responsive" alt="related"
+                            style="width: 100px; height: 95px; object-fit: contain;">
+                    </a>
+                </div>
+                <div class="media-body space-md top-rated-content">
+                    <h4>
+                        <a href="{{ other.get_absolute_url }}">{{ other.title }}</a>
+                    </h4>
+                    <div class="amount">
+                        <span class="currency"></span>{{ other.price | floatformat:2 }} AZN</div>
+                </div>
+            </li>
+        {% endfor %}
+
+
+        {% comment %} <li class="media">
             <div class="top-rated-img">
                 <a href="#">
                     <img src="{% static 'general/base/img/shop/shop1.jpg' %}" class="img-responsive" alt="related"
@@ -47,21 +66,6 @@
                 <div class="amount">
                     <span class="currency"></span>15 AZN</div>
             </div>
-        </li>
-        <li class="media">
-            <div class="top-rated-img">
-                <a href="#">
-                    <img src="{% static 'general/base/img/shop/shop1.jpg' %}" class="img-responsive" alt="related"
-                        style="width: 100px; height: 95px;">
-                </a>
-            </div>
-            <div class="media-body space-md top-rated-content">
-                <h4>
-                    <a href="#">Medical Product Title</a>
-                </h4>
-                <div class="amount">
-                    <span class="currency"></span>15 AZN</div>
-            </div>
-        </li>
+        </li> {% endcomment %}
     </ul>
 </div>

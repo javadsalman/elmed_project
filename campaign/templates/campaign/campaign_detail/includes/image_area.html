@@ -1,41 +1,62 @@
-{% load static %}
-
 <div class="col-xl-6 col-12">
     <div class="single-product-gallery">
-        <div class="tab-content">
+        <div class="tab-content p-3">
             <div role="tabpanel" class="tab-pane fade active show" id="fitness-related1">
                 <a href="#">
-                    <img alt="single" src="{% static 'general/base/img/shop/shop6.png' %}" class="img-responsive">
+                    <img alt="single" src="{{ campaign.first_image.url }}" class="img-responsive"
+                        style="width: 100%; height: 300px; object-fit: contain;">
                 </a>
             </div>
-            <div role="tabpanel" class="tab-pane fade" id="fitness-related2">
-                <a href="#">
-                    <img alt="single" src="{% static 'general/base/img/shop/shop6.png' %}" class="img-responsive">
-                </a>
-            </div>
-            <div role="tabpanel" class="tab-pane fade" id="fitness-related3">
-                <a href="#">
-                    <img alt="single" src="{% static 'general/base/img/shop/shop6.png' %}" class="img-responsive">
-                </a>
-            </div>
+            
+            {% if campaign.second_image %}
+                <div role="tabpanel" class="tab-pane fade" id="fitness-related2">
+                    <a href="#">
+                        <img alt="single" src="{{ campaign.second_image.url }}" class="img-responsive"
+                            style="width: 100%; height: 300px; object-fit: contain;">
+                    </a>
+                </div>
+            {% endif %}
+                
+            {% if campaign.third_image %}
+                <div role="tabpanel" class="tab-pane fade" id="fitness-related3">
+                    <a href="#">
+                        <img alt="single" src="{{ campaign.third_image.url }}" class="img-responsive"
+                            style="width: 100%; height: 300px; object-fit: contain;">
+                    </a>
+                </div>
+            {% endif %}
+                
         </div>
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a href="#fitness-related1" data-toggle="tab" aria-expanded="false"
-                    class="active">
-                    <img alt="fitness-related1" src="{% static 'general/base/img/shop/shop7.png' %}" class="img-responsive">
+                    class="active p-2">
+                    <img alt="fitness-related1" src="{{ campaign.first_image.url }}" class="img-responsive"
+                        style="width: 100%; height: 101px; object-fit: contain;">
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="#fitness-related2" data-toggle="tab" aria-expanded="false">
-                    <img alt="fitness-related2" src="{% static 'general/base/img/shop/shop7.png' %}" class="img-responsive">
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#fitness-related3" data-toggle="tab" aria-expanded="false">
-                    <img alt="fitness-related3" src="{% static 'general/base/img/shop/shop7.png' %}" class="img-responsive">
-                </a>
-            </li>
+            
+            {% if campaign.second_image %}
+                <li class="nav-item">
+                    <a href="#fitness-related2" data-toggle="tab" aria-expanded="false"
+                        class="p-2">
+                        <img alt="fitness-related2" src="{{ campaign.second_image.url }}" class="img-responsive"
+                            style="width: 100%; height: 101px; object-fit: contain;">
+                    </a>
+                </li>
+            {% endif %}
+            
+            {% if campaign.third_image %}
+                <li class="nav-item">
+                    <a href="#fitness-related3" data-toggle="tab" aria-expanded="false"
+                        class="p-2">
+                        <img alt="fitness-related3" src="{{ campaign.third_image.url }}" class="img-responsive"
+                            style="width: 100%; height: 101px; object-fit: contain;">
+                    </a>
+                </li>
+            {% endif %}
+                
+            
         </ul>
     </div>
 </div>

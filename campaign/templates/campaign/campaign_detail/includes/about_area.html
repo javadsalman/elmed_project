@@ -3,18 +3,7 @@
         <p class="m-0 text-center text-md-left" style="font-size: 30px; color: black; font-weight: 500;">Ətraflı</p>
         <hr class="w-50 mx-auto mt-md-0 ml-md-0">
         <div>
-            <p>Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla
-                augue
-                nec est tristique auctor. Donec non est at libero vulputate rutrum.
-                Morbi
-                justo gravida semper.</p>
-            <ul class="list-content">
-                <li>Seat Height – Floor to Seat: 24”</li>
-                <li>Frame Material: Wood</li>
-                <li>Seat Material: Wood</li>
-                <li>Adjustable Height: No</li>
-                <li>Overall: 24” H x 17” W x 14” D</li>
-            </ul>
-            </div>
+            {{ campaign.about | safe }}    
+        </div>
     </div>
 </div>

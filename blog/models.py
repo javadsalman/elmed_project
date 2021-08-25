@@ -68,7 +68,7 @@ class Article(models.Model):
         return reverse("article", kwargs={"pk": self.pk, "slug": self.slug})
         
     def related_articles(self):
-        return self.category.article_set.exclude(pk=self.pk)[:4]
+        return self.category.article_set.filter(show=True).exclude(pk=self.pk)[:4]
     
     def slug_link(self):
         return get_slug_link(self.slug, self.get_absolute_url)
