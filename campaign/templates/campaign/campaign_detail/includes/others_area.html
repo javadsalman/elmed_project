@@ -16,7 +16,11 @@
                         <a href="{{ other.get_absolute_url }}">{{ other.title }}</a>
                     </h4>
                     <div class="amount">
-                        <span class="currency"></span>{{ other.price | floatformat:2 }} AZN</div>
+                        {% if other.price != 0 %}
+                            <span class="currency"></span>{{ other.price | floatformat:2 }} AZN</div>
+                        {% else %}
+                            <span class="currency"></span>Ödənişsiz</div>
+                        {% endif %}
                 </div>
             </li>
         {% endfor %}

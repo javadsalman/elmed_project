@@ -12,7 +12,11 @@
                     <h4 class="item-title">
                         <a href="{{ campaign.get_absolute_url }}">{{ campaign.title }}</a>
                     </h4>
-                    <div class="item-price">{{ campaign.price | floatformat:2}} AZN</div>
+                    {% if campaign.price != 0 %}
+                        <div class="item-price">{{ campaign.price | floatformat:2}} AZN</div>
+                    {% else %}
+                        <div class="item-price">Ödənişsiz</div>
+                    {% endif %}
                 </div>
             </div>
         </div>

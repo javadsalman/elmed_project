@@ -1,7 +1,11 @@
 <div class="col-xl-6 col-12">
     <div class="single-product-info">
         <h2 class="item-title">{{ campaign.title }}</h2>
-        <div class="price">{{ campaign.price | floatformat:2}} AZN</div>
+        {% if campaign.price != 0 %}
+            <div class="price">{{ campaign.price | floatformat:2}} AZN</div>
+        {% else %}
+            <div class="price">Ödənişsiz</div>
+        {% endif %}
         <div class="item-sku">Tarix:
             <span>{{ campaign.date_interval }}</span>
         </div>
@@ -30,37 +34,27 @@
             </form>
             
         </div>
-        <div class="product-share">
+        <div id="share-section" class="product-share">
             <ul>
                 <li>Paylaş:</li>
                 <li>
-                    <a href="#">
+                    <a id="fb-share-button" href="#">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a id="whatsapp-share-button" href="#">
+                        <i class="fab fa-whatsapp font-weight-bold" aria-hidden="true" style="font-size: 18px;"></i>
+                    </a>
+                </li>
+                <li>
+                    <a id="twitter-share-button" href="#">
                         <i class="fab fa-twitter"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fab fa-pinterest-p"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fab fa-skype"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fab fa-youtube"></i>
+                    <a id="copy-url" href="#" data-toggle="tooltip" data-placement="bottom" title="Copied" data-trigger="click">
+                        <i class="fa fa-link"></i>
                     </a>
                 </li>
             </ul>

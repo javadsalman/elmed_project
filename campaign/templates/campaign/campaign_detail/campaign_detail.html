@@ -1,12 +1,32 @@
 {% extends 'layouts/main_layout/main_layout.html' %}
 
+
+{% block metas %}
+    <meta name="title" content="{{ campaign.title }} - Elmed Kampaniya">
+    <meta name="description" content="{{ campaign.title }} kampaniyasından yararlanmağa tələsin! Müasir cihazlar və mütəxəssis həkim heyətimiz ilə həmişəki kimi xidmətinizdəyik!">
+    <meta name="theme-color" content="#fff">
+
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta property="og:url"           content="{{ request.build_absolute_uri }}"/>
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="{{ campaign.title }} - Elmed Kampaniya"/>
+	<meta property="og:description"   content="{{ campaign.title }} kampaniyasından yararlanmağa tələsin! Müasir cihazlar və mütəxəssis həkim heyətimiz ilə həmişəki kimi xidmətinizdəyik!"/>
+	<meta property="og:image"         content="{{request.scheme}}://{{request.META.HTTP_HOST}}{{ campaign.first_image.url }}" />
+{% endblock metas %}
+
+
+{% block title %}
+    <title>{{ campaign.title }} - Elmed Kampaniya</title>
+{% endblock title %}
+
+
 {% block links %}
     {% include 'campaign/campaign_detail/includes/links.html' %}
 {% endblock links %}
 
 
 {% block body %}
-    {% include 'general_includes/banner/banner.html' with adress_string="Baş Səhifə" name="Kampaniyalar"%}
+    {% include 'general_includes/banner/banner.html' with adress_string="Baş Səhifə, Kampaniyalar" name=campaign.title%}
     <!-- Shop Details Start Here -->
     <section class="single-product-wrap bg-light-primary100">
         <div class="container">
