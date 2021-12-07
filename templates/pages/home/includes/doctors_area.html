@@ -6,8 +6,8 @@
     <img class="right-img img-fluid" src="{% static 'general/base/img/figure/figure5.png' %}" alt="figure">
     <div class="container">
         <div class="section-heading heading-dark text-left heading-layout1">
-            <h2><a href="{% url 'doctor-list' %}" class="text-dark">Specialist Doctors</a></h2>
-            <p>Experienced Doctor</p>
+            <h2><a href="{% url 'doctor-list' %}" class="text-dark">Mütəxəssis Həkimlərimiz</a></h2>
+            <p>Həkimlərin Listi</p>
             <div id="owl-nav2" class="owl-nav-layout1">
                 <span class="rt-prev">
                     <i class="fas fa-chevron-left"></i>
@@ -95,106 +95,10 @@
                         {% endwith %}
                     </div>
                     <div class="item-schedule">
-                        <a href="{% url 'appointment' %}?departament={{ doctor.departament.slug }}&doctor={{ doctor.slug }}" class="item-btn">MAKE AN APPOINTMENT</a>
+                        <a href="{% url 'appointment' %}?departament={{ doctor.departament.slug }}&doctor={{ doctor.slug }}" class="item-btn">HƏKİMƏ RANDEVU AL</a>
                     </div>
                 </div>
             {% endfor %}
-            {% comment %} <div class="team-box-layout2">
-                <div class="item-img">
-                    <img src="{% static 'general/base/img/team/team34.png' %}" alt="Team1" class="img-fluid rounded-circle">
-                    <ul class="item-icon">
-                        <li>
-                            <a href="single-doctor.html">
-                                <i class="fas fa-plus"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="item-content">
-                    <h3 class="item-title">
-                        <a href="single-doctor.html">Dr. Nadim Kamal</a>
-                    </h3>
-                    <p>Orthopaedics</p>
-                </div>
-                <div class="item-schedule">
-                    <ul>
-                        <li>Mon - Tues
-                            <span>08.00 :17.00</span>
-                        </li>
-                        <li>Fri - Sat
-                            <span>09.00 :12.00</span>
-                        </li>
-                        <li>Sun - Mon
-                            <span>08.00 :17.00</span>
-                        </li>
-                    </ul>
-                    <a href="single-doctor.html" class="item-btn">MAKE AN APPOINTMENT</a>
-                </div>
-            </div>
-            <div class="team-box-layout2">
-                <div class="item-img">
-                    <img src="{% static 'general/base/img/team/team35.png' %}" alt="Team1" class="img-fluid rounded-circle">
-                    <ul class="item-icon">
-                        <li>
-                            <a href="single-doctor.html">
-                                <i class="fas fa-plus"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="item-content">
-                    <h3 class="item-title">
-                        <a href="single-doctor.html">Dr. Rihana Roy</a>
-                    </h3>
-                    <p>Lense Expert</p>
-                </div>
-                <div class="item-schedule">
-                    <ul>
-                        <li>Mon - Tues
-                            <span>08.00 :17.00</span>
-                        </li>
-                        <li>Fri - Sat
-                            <span>09.00 :12.00</span>
-                        </li>
-                        <li>Sun - Mon
-                            <span>08.00 :17.00</span>
-                        </li>
-                    </ul>
-                    <a href="single-doctor.html" class="item-btn">MAKE AN APPOINTMENT</a>
-                </div>
-            </div>
-            <div class="team-box-layout2">
-                <div class="item-img">
-                    <img src="{% static 'general/base/img/team/team36.png' %}" alt="Team1" class="img-fluid rounded-circle">
-                    <ul class="item-icon">
-                        <li>
-                            <a href="single-doctor.html">
-                                <i class="fas fa-plus"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="item-content">
-                    <h3 class="item-title">
-                        <a href="single-doctor.html">Dr. Steven Roy</a>
-                    </h3>
-                    <p>Cardiology</p>
-                </div>
-                <div class="item-schedule">
-                    <ul>
-                        <li>Mon - Tues
-                            <span>08.00 :17.00</span>
-                        </li>
-                        <li>Fri - Sat
-                            <span>09.00 :12.00</span>
-                        </li>
-                        <li>Sun - Mon
-                            <span>08.00 :17.00</span>
-                        </li>
-                    </ul>
-                    <a href="single-doctor.html" class="item-btn">MAKE AN APPOINTMENT</a>
-                </div>
-            </div> {% endcomment %}
         </div>
     </div>
 </section>

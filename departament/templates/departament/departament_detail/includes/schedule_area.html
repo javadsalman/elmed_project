@@ -1,7 +1,7 @@
 {% with departament.schedule as schedule %}
     {% if schedule.show_schedule %}
         <div class="widget widget-schedule">
-            <h3 class="section-title title-bar-primary">Opening Hours</h3>
+            <h3 class="section-title title-bar-primary">İş Saatları</h3>
             <ul> 
                 {% if schedule.monday_show %}
                     <li>Bazar Ertəsi: <span>{{ schedule.monday_start }} - {{ schedule.monday_end }}</span></li>

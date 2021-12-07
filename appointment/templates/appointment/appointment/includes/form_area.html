@@ -6,16 +6,15 @@
         <div class="row no-gutters">
             <div class="col-xl-6">
                 <div class="appointment-box-layout1">
-                    <h2 class="title title-bar-primary2">Make an Appointment</h2>
-                    <p>Efficiently myocardinate market-driven innovation via open-source alignments.
-                        Dramatically engage
-                        porescently.</p>
+                    <h2 class="title title-bar-primary2">Onlayn Randevu</h2>
+                    <p>Aşağıdakı bölmədə məlumatları qeyd edərək randevu haqqında ön məlumat almağımıza kömək edin.
+                    Məlumatlar göndərildikdən sonra ən qısa müddətdə sizinlə əlaqə saxlanılacaq.</p>
                     <form id="appointment-form" action="{% url 'appointment' %}" method="post"}>
                         {% csrf_token %}
                         <div class="row gutters-15">
                             <div class="col-12 form-group">
                                 <select name="departament" class="select2" data-error="Phone field is required">
-                                    <option value="">Select Department</option>
+                                    <option value="">Şöbə Seç</option>
                                     {% for departament in departaments %}
                                         <option 
                                             value="{{ departament.id }}"
@@ -28,7 +27,7 @@
                             </div>
                             <div class="col-12 form-group">
                                 <select name="doctor" class="select2" data-error="Phone field is required">
-                                    <option value="">Choose Doctor by Name</option>
+                                    <option value="">Həkim Seç</option>
                                     {% for doctor in doctors %}
                                         <option 
                                             value="{{ doctor.id }}"
@@ -79,7 +78,7 @@
                                 data-sitekey="6LcNJ9sbAAAAAGalq-RFjtKWAEMDaOQp2AnCCU5T"
                                 data-callback="onSubmit" 
                                 data-action="submit"
-                                >Make an Appointment</button>
+                                >Randevu Göndər</button>
                             </div>
                         </div>
                     </form>

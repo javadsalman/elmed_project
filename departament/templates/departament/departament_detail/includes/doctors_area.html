@@ -11,7 +11,7 @@
                 <div class="media-body mt-5">
                     <h4 class="item-title"><a href="{{ doctor.get_absolute_url }}">{{ doctor.name }}</a></h4>
                     <p>{{ doctor.profession }}</p>
-                    <a href="#" class="item-btn">Make an Appointment</a>
+                    <a href="{% url 'appointment' %}?departament={{ departament.slug }}&doctor={{ doctor.slug }}" class="item-btn">Həkimə Randevu Al</a>
                 </div>
             </div>
         </div>

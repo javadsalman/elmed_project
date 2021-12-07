@@ -1,11 +1,11 @@
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <div class="widget widget-appointment">
-    <h3 class="section-title-light title-bar-light">Book Appointment</h3>
+    <h3 class="section-title-light title-bar-light">Onlayn Randevu</h3>
     <form id="appointment-form" action="{% url 'appointment' %}" method="post">
         {% csrf_token %}
         <div class="form-group">
             <select name="departament" class="select2" data-error="Phone field is required">
-                <option value="">Select Department</option>
+                <option value="">Şöbə Seç</option>
                 {% for departament in departaments %}
                     <option 
                         value="{{ departament.id }}"
@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             <select name="doctor" class="select2" data-error="Phone field is required">
-                <option value="">Choose Doctor by Name</option>
+                <option value="">Həkim Seç</option>
                 {% for doctor in doctors %}
                     <option value="{{ doctor.id }}">Dr. {{ doctor.name }}</option>
                 {% endfor %}
@@ -64,7 +64,7 @@
                 data-sitekey="6LcNJ9sbAAAAAGalq-RFjtKWAEMDaOQp2AnCCU5T"
                 data-callback="onSubmit" 
                 data-action="submit">
-                BOOK NOW
+                Göndər
                 <i class="fas fa-chevron-right"></i>
             </button>
         </div>

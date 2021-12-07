@@ -5,8 +5,8 @@
     <img class="left-img img-fluid" src="{% static 'general/base/img/figure/figure8.png' %}" alt="figure">
     <div class="container">
         <div class="section-heading heading-dark text-left heading-layout1">
-            <h2><a href="{% url 'departament-list' %}" class="text-dark">Our Departments</a></h2>
-            <p>Dedicated Services</p>
+            <h2><a href="{% url 'departament-list' %}" class="text-dark">Şöbələrimiz</a></h2>
+            <p>Şöbələrin Listi</p>
             <div id="owl-nav1" class="owl-nav-layout1">
                 <span class="rt-prev">
                     <i class="fas fa-chevron-left"></i>
@@ -30,31 +30,10 @@
                     <div class="item-icon"><img src="{{ departament.icon.url }}" alt="{{ departament.name }}" style="width: 70px"></div>
                     <h3 class="item-title"><a href="{{ departament.get_absolute_url }}">{{ departament.name }}</a></h3>
                     <p style="height: 100px;">{{ departament.description | truncatechars:79 }}</p>
-                    <a class="item-btn" href="{{ departament.get_absolute_url }}">READ MORE<i class="fas fa-long-arrow-alt-right"></i></a>
+                    <a class="item-btn" href="{{ departament.get_absolute_url }}">ƏTRAFLI<i class="fas fa-long-arrow-alt-right"></i></a>
                 </div>
             {% endfor %}
 
-            {% comment %} <div class="departments-box-layout2">
-                <span class="departments-sl">02.</span>
-                <div class="item-icon"><i class="flaticon-pills"></i></div>
-                <h3 class="item-title"><a href="#">Medicine</a></h3>
-                <p>Aorem Ipsumea dummy texte printing setting detry bringin eight challenges faced.</p>
-                <a class="item-btn" href="#">READ MORE<i class="fas fa-long-arrow-alt-right"></i></a>
-            </div>
-            <div class="departments-box-layout2">
-                <span class="departments-sl">03.</span>
-                <div class="item-icon"><i class="flaticon-medical-5"></i></div>
-                <h3 class="item-title"><a href="#">Cardeology</a></h3>
-                <p>Aorem Ipsumea dummy texte printing setting detry bringin eight challenges faced.</p>
-                <a class="item-btn" href="#">READ MORE<i class="fas fa-long-arrow-alt-right"></i></a>
-            </div>
-            <div class="departments-box-layout2">
-                <span class="departments-sl">04.</span>
-                <div class="item-icon"><i class="flaticon-human-hip"></i></div>
-                <h3 class="item-title"><a href="#">Orthopedic</a></h3>
-                <p>Aorem Ipsumea dummy texte printing setting detry bringin eight challenges faced.</p>
-                <a class="item-btn" href="#">READ MORE<i class="fas fa-long-arrow-alt-right"></i></a>
-            </div> {% endcomment %}
         </div>
     </div>
 </section>

@@ -17,13 +17,13 @@
                             <div class="item-degree">{{ doctor.degree }}</div>
                             <ul class="item-btns">
                                 <li>
-                                    <a href="{{ doctor.get_absolute_url }}" class="item-btn btn-ghost">View Profile</a>
+                                    <a href="{{ doctor.get_absolute_url }}" class="item-btn btn-ghost">Həkim Profilini Göstər</a>
                                 </li>
                                 <li>
                                     <a 
                                         href="{% url 'appointment' %}?doctor={{ doctor.slug }}&departament={{ doctor.departament.slug }}" 
                                         class="item-btn btn-fill">
-                                        Make an Appointment
+                                        Həkimə Randevu Al
                                     </a>
                                 </li>
                             </ul>

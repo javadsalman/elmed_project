@@ -1218,7 +1218,7 @@ CSS INDEX
   width: 5rem;
   background-color: #ffffff;
   border-radius: 50%;
-  color: #396cf0;
+  color: #1ED61F;
   transition: all 0.3s ease-out;
 }
 .owl-nav-layout1 span i:before {
@@ -1227,7 +1227,7 @@ CSS INDEX
   font-size: 1.8rem;
 }
 .owl-nav-layout1 span:hover {
-  background-color: #396cf0;
+  background-color: #1ED61F;
   color: #ffffff;
   -webkit-box-shadow: 0px 4px 20px 0px rgba(42, 92, 220, 0.75);
   -moz-box-shadow: 0px 4px 20px 0px rgba(42, 92, 220, 0.75);
@@ -1256,7 +1256,7 @@ CSS INDEX
   width: 4.5rem;
   background-color: #ffffff;
   border-radius: 50%;
-  color: #396cf0;
+  color: #1ED61F;
   border: 1px solid #ffffff;
   transition: all 0.3s ease-out;
 }
@@ -1266,7 +1266,7 @@ CSS INDEX
   font-size: 1.8rem;
 }
 .owl-nav-layout2 span:hover {
-  background-color: #396cf0;
+  background-color: #1ED61F;
   color: #ffffff;
   -webkit-box-shadow: 0px 4px 20px 0px rgba(42, 92, 220, 0.75);
   -moz-box-shadow: 0px 4px 20px 0px rgba(42, 92, 220, 0.75);
@@ -1277,7 +1277,7 @@ CSS INDEX
 }
 .nav-control-layout1 .owl-controls .owl-nav > div {
   color: #111111;
-  border: 1px solid #396cf0;
+  border: 1px solid #1ED61F;
   background: transparent;
   opacity: 0;
   visibility: hidden;
@@ -1364,7 +1364,7 @@ CSS INDEX
   }
 }
 .nav-control-layout1 .owl-controls .owl-prev:hover {
-  background: #396cf0;
+  background: #1ED61F;
   color: #ffffff;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -1396,7 +1396,7 @@ CSS INDEX
   }
 }
 .nav-control-layout1 .owl-controls .owl-next:hover {
-  background: #396cf0;
+  background: #1ED61F;
   color: #ffffff;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -1424,7 +1424,7 @@ CSS INDEX
   opacity: 0;
   visibility: hidden;
   font-size: 24px;
-  color: #396cf0;
+  color: #1ED61F;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1479,7 +1479,7 @@ CSS INDEX
   left: -50px;
 }
 .nav-control-layout2 .owl-controls .owl-prev:hover {
-  background: #396cf0;
+  background: #1ED61F;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
@@ -1493,7 +1493,7 @@ CSS INDEX
   right: -50px;
 }
 .nav-control-layout2 .owl-controls .owl-next:hover {
-  background: #396cf0;
+  background: #1ED61F;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
@@ -1585,7 +1585,7 @@ CSS INDEX
   left: 50px;
 }
 .nav-control-layout3 .owl-controls .owl-prev:hover {
-  background: #396cf0;
+  background: #1ED61F;
   color: #ffffff;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -1597,7 +1597,7 @@ CSS INDEX
   right: 50px;
 }
 .nav-control-layout3 .owl-controls .owl-next:hover {
-  background: #396cf0;
+  background: #1ED61F;
   color: #ffffff;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -1610,7 +1610,7 @@ CSS INDEX
 }
 .nav-control-layout4 .owl-controls .owl-nav > div {
   color: #111111;
-  border: 1px solid #396cf0;
+  border: 1px solid #1ED61F;
   background: transparent;
   opacity: 0;
   visibility: hidden;
@@ -1677,7 +1677,7 @@ CSS INDEX
   left: -20px;
 }
 .nav-control-layout4 .owl-controls .owl-prev:hover {
-  background: #396cf0;
+  background: #1ED61F;
   color: #ffffff;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -1689,7 +1689,7 @@ CSS INDEX
   right: -20px;
 }
 .nav-control-layout4 .owl-controls .owl-next:hover {
-  background: #396cf0;
+  background: #1ED61F;
   color: #ffffff;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
@@ -1762,7 +1762,7 @@ CSS INDEX
   left: 50px;
 }
 .nav-control-layout5 .owl-controls .owl-prev:hover {
-  background: #396cf0;
+  background: #1ED61F;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
@@ -1776,7 +1776,7 @@ CSS INDEX
   right: 50px;
 }
 .nav-control-layout5 .owl-controls .owl-next:hover {
-  background: #396cf0;
+  background: #1ED61F;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
@@ -1799,7 +1799,7 @@ CSS INDEX
 }
 .nav-control-layout6 .owl-controls .owl-nav > div {
   font-size: 22px;
-  color: #396cf0;
+  color: #1ED61F;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1840,7 +1840,7 @@ CSS INDEX
   }
 }
 .nav-control-layout6 .owl-controls .owl-nav > div:hover {
-  background: #396cf0;
+  background: #1ED61F;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
@@ -2096,7 +2096,7 @@ CSS INDEX
   transition: all 0.3s ease-out;
 }
 .dot-control-layout3 .owl-controls .owl-dots .active span {
-  background: #396cf0;
+  background: #1ED61F;
 }
 .dot-control-layout3 .owl-nav {
   margin-top: 0;
@@ -2184,7 +2184,7 @@ CSS INDEX
   content: "";
   height: 3px;
   width: 50px;
-  background: #396cf0;
+  background: #1ED61F;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -2204,7 +2204,7 @@ CSS INDEX
   content: "";
   height: 4px;
   width: 50px;
-  background: #396cf0;
+  background: #1ED61F;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -2244,7 +2244,7 @@ CSS INDEX
   content: "";
   height: 4px;
   width: 50px;
-  background: #396cf0;
+  background: #1ED61F;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -2264,7 +2264,7 @@ CSS INDEX
   content: "";
   height: 4px;
   width: 50px;
-  background-color: #396cf0;
+  background-color: #1ED61F;
   border-radius: 4px;
   bottom: 0;
   left: 0;
@@ -2280,7 +2280,7 @@ CSS INDEX
   height: 4px;
   width: 50px;
   margin: 0 auto;
-  background-color: #396cf0;
+  background-color: #1ED61F;
   bottom: 0;
   right: 0;
   left: 0;
@@ -2296,7 +2296,7 @@ CSS INDEX
   content: "";
   height: 4px;
   width: 50px;
-  background-color: #396cf0;
+  background-color: #1ED61F;
   border-radius: 4px;
   bottom: 0;
   left: 0;
@@ -2341,7 +2341,7 @@ CSS INDEX
 .select2-container--classic .select2-selection--single .select2-selection__arrow {
   top: 50%;
   transform: translateY(-50%);
-  background-color: #396cf0;
+  background-color: #1ED61F;
   background-image: none;
   border-style: none;
   right: 10px;
@@ -2354,7 +2354,7 @@ CSS INDEX
   border-radius: 2px;
 }
 .select2-container--classic .select2-results__option--highlighted[aria-selected] {
-  background-color: #396cf0;
+  background-color: #1ED61F;
   color: #ffffff;
 }
 .select2-container--classic .select2-selection--single .select2-selection__arrow b {
@@ -2384,7 +2384,7 @@ CSS INDEX
 .select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow {
   top: 50%;
   transform: translateY(-50%);
-  background-color: #396cf0;
+  background-color: #1ED61F;
   background-image: none;
   border-style: none;
   right: 10px;

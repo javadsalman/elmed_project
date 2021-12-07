@@ -18,7 +18,7 @@ class Doctor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='İstifadəçi Hesabı')
     name = models.CharField(max_length=50, verbose_name='Ad Soyad')
     slug = models.CharField(max_length=100)
-    image = ProcessedImageField(upload_to='doctor/image/', options={'quality': 90}, verbose_name='Şəkil')
+    image = ProcessedImageField(upload_to='doctor/image/', options={'quality': 180}, verbose_name='Şəkil')
     departament = models.ForeignKey(Departament, on_delete=models.SET_NULL, null=True, verbose_name='Şöbə')
     about = RichTextField(null=False, blank=True, verbose_name='Haqqında Məlumat')
     profession = models.CharField(max_length=100, verbose_name='Vəzifəsi')
