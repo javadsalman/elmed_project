@@ -1,3 +1,7 @@
 .header-menu-area {
     background-color: #1ED61F;
 }
+.mobile-logo {
+    width: 160px;
+    margin-left: -50px;
+}
